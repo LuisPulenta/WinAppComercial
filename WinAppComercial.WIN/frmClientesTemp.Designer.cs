@@ -72,10 +72,12 @@ namespace WinAppComercial.WIN
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSWIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -163,6 +165,7 @@ namespace WinAppComercial.WIN
             this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
             this.tsbNuevo.Text = "toolStripButton5";
             this.tsbNuevo.ToolTipText = "Nuevo Registro";
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
             // tsbEditar
             // 
@@ -173,6 +176,7 @@ namespace WinAppComercial.WIN
             this.tsbEditar.Size = new System.Drawing.Size(29, 24);
             this.tsbEditar.Text = "toolStripButton6";
             this.tsbEditar.ToolTipText = "Editar Registro";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsbBorrar
             // 
@@ -183,26 +187,31 @@ namespace WinAppComercial.WIN
             this.tsbBorrar.Size = new System.Drawing.Size(29, 24);
             this.tsbBorrar.Text = "toolStripButton7";
             this.tsbBorrar.ToolTipText = "Borrar Registro";
+            this.tsbBorrar.Click += new System.EventHandler(this.tsbBorrar_Click);
             // 
             // tsbGuardar
             // 
             this.tsbGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbGuardar.Enabled = false;
             this.tsbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tsbGuardar.Image")));
             this.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbGuardar.Name = "tsbGuardar";
             this.tsbGuardar.Size = new System.Drawing.Size(29, 24);
             this.tsbGuardar.Text = "toolStripButton8";
             this.tsbGuardar.ToolTipText = "Guardar Cambios";
+            this.tsbGuardar.Click += new System.EventHandler(this.tsbGuardar_Click);
             // 
             // tsbCancelar
             // 
             this.tsbCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCancelar.Enabled = false;
             this.tsbCancelar.Image = ((System.Drawing.Image)(resources.GetObject("tsbCancelar.Image")));
             this.tsbCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCancelar.Name = "tsbCancelar";
             this.tsbCancelar.Size = new System.Drawing.Size(29, 24);
             this.tsbCancelar.Text = "toolStripButton9";
             this.tsbCancelar.ToolTipText = "Cancelar Cambios";
+            this.tsbCancelar.Click += new System.EventHandler(this.tsbCancelar_Click);
             // 
             // tsbBuscar
             // 
@@ -458,6 +467,10 @@ namespace WinAppComercial.WIN
             this.dgvDatos.Size = new System.Drawing.Size(1238, 430);
             this.dgvDatos.TabIndex = 27;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmClientesTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -503,6 +516,7 @@ namespace WinAppComercial.WIN
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSWIN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,5 +565,6 @@ namespace WinAppComercial.WIN
         private System.Windows.Forms.TextBox txtNotas;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
