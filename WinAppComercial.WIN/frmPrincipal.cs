@@ -82,5 +82,12 @@ namespace WinAppComercial.WIN
             miForm.MdiParent = this;
             miForm.Show();
         }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmProductos miForm = new frmProductos();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
     }
 }

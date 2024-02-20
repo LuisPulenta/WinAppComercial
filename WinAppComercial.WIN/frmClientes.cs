@@ -26,7 +26,17 @@ namespace WinAppComercial.WIN
             if (!Validarcampos()) return;
             this.Validate();
             this.clienteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dSWIN);
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.dSWIN);
+                errorProvider1.Clear();
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(documentoTextBox, "Este N° de Documento ya está asignado");
+                documentoTextBox.Focus();
+                return;
+            }
             Habilitar(false);
         }
 
