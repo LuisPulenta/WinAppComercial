@@ -170,6 +170,15 @@ namespace WinAppComercial.WIN
             this.clienteBindingSource.RemoveAt(clienteBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSWIN);
         }
+
+        private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCliente miBusqueda = new frmBusquedaCliente();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            int position = clienteBindingSource.Find("IDCliente", miBusqueda.IDElegido);
+            clienteBindingSource.Position = position;
+        }
     }
 }
 

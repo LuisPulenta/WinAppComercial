@@ -422,6 +422,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorSearchItem.Text = "Buscar Registro";
             this.bindingNavigatorSearchItem.ToolTipText = "Buscar Registro";
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // dgvDatos
             // 

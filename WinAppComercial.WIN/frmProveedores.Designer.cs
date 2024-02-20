@@ -272,14 +272,14 @@ namespace WinAppComercial.WIN
             this.proveedorBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.proveedorBindingNavigator.Name = "proveedorBindingNavigator";
             this.proveedorBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.proveedorBindingNavigator.Size = new System.Drawing.Size(1278, 27);
+            this.proveedorBindingNavigator.Size = new System.Drawing.Size(1278, 31);
             this.proveedorBindingNavigator.TabIndex = 0;
             this.proveedorBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 28);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -289,7 +289,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             // 
             // bindingNavigatorMovePreviousItem
@@ -298,13 +298,13 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -319,7 +319,7 @@ namespace WinAppComercial.WIN
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -327,7 +327,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
             // 
             // bindingNavigatorMoveLastItem
@@ -336,13 +336,13 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -350,7 +350,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem.Text = "Nuevo Registro";
             this.bindingNavigatorAddNewItem.ToolTipText = "Nuevo Registro";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
@@ -361,7 +361,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorEditItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEditItem.Image")));
             this.bindingNavigatorEditItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorEditItem.Name = "bindingNavigatorEditItem";
-            this.bindingNavigatorEditItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorEditItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorEditItem.Text = "Editar Registro";
             this.bindingNavigatorEditItem.ToolTipText = "Editar Registro";
             this.bindingNavigatorEditItem.Click += new System.EventHandler(this.bindingNavigatorEditItem_Click);
@@ -372,7 +372,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorDeleteItem.Text = "Borrar Registro";
             this.bindingNavigatorDeleteItem.ToolTipText = "Borrar Registro";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
@@ -383,7 +383,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorSaveItem.Enabled = false;
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
             this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
-            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorSaveItem.Text = "Guardar Registro";
             this.bindingNavigatorSaveItem.ToolTipText = "Guardar Registro";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.bindingNavigatorSaveItem_Click);
@@ -395,7 +395,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorCancelItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancelItem.Image")));
             this.bindingNavigatorCancelItem.Name = "bindingNavigatorCancelItem";
             this.bindingNavigatorCancelItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorCancelItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorCancelItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorCancelItem.Text = "Cancelar Cambios";
             this.bindingNavigatorCancelItem.ToolTipText = "Cancelar Cambios";
             this.bindingNavigatorCancelItem.Click += new System.EventHandler(this.bindingNavigatorCancelItem_Click);
@@ -406,9 +406,10 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorSearchItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearchItem.Image")));
             this.bindingNavigatorSearchItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorSearchItem.Name = "bindingNavigatorSearchItem";
-            this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorSearchItem.Text = "Buscar Registro";
             this.bindingNavigatorSearchItem.ToolTipText = "Buscar Registro";
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // dgvDatos
             // 

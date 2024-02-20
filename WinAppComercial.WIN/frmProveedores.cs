@@ -176,5 +176,14 @@ namespace WinAppComercial.WIN
             this.proveedorBindingSource.RemoveAt(proveedorBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSWIN);
         }
+
+        private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
+        {
+            frmBusquedaProveedor miBusqueda = new frmBusquedaProveedor();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            int position = proveedorBindingSource.Find("IDProveedor", miBusqueda.IDElegido);
+            proveedorBindingSource.Position = position;
+        }
     }
 }
