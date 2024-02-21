@@ -89,5 +89,26 @@ namespace WinAppComercial.WIN
             miForm.MdiParent = this;
             miForm.Show();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frmClientes miForm = new frmClientes();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void tsbProveedores_Click(object sender, EventArgs e)
+        {
+            frmProveedores miForm = new frmProveedores();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void tsbProductos_Click(object sender, EventArgs e)
+        {
+            frmProductos miForm = new frmProductos();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
     }
 }

@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CADBarra.cs" />
+    <Compile Include="CADBodegaProducto.cs" />
     <Compile Include="CADCliente.cs" />
+    <Compile Include="CADDS.cs">
+      <DependentUpon>CADDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CADDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
