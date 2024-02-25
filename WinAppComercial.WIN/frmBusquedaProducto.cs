@@ -52,8 +52,9 @@ namespace WinAppComercial.WIN
             }
             try
             {
-                this.productoTableAdapter.Fill(
-                    this.dSWIN.Producto);
+                this.productoTableAdapter.FillBy(
+                    this.dSWIN.Producto,
+                    descripcion);
             }
             catch (System.Exception ex)
             {

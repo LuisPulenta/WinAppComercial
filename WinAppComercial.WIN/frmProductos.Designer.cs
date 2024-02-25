@@ -274,8 +274,10 @@ namespace WinAppComercial.WIN
             this.tableAdapterManager.MedidaTableAdapter = this.medidaTableAdapter;
             this.tableAdapterManager.ProductoTableAdapter = this.productoTableAdapter;
             this.tableAdapterManager.ProveedorTableAdapter = null;
+            this.tableAdapterManager.RolTableAdapter = null;
             this.tableAdapterManager.TipoDocumentoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WinAppComercial.WIN.DSWINTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
             // departamentoTableAdapter
             // 
@@ -458,6 +460,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorSearchItem.Text = "toolStripButton3";
             this.bindingNavigatorSearchItem.ToolTipText = "Buscar un Registro";
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // bindingNavigatorPrint
             // 

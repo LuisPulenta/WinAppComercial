@@ -5122,7 +5122,14 @@ namespace WinAppComercial.CAD {
             public string Notas {
                 get {
                     try {
-                        return ((string)(this[this.tableProducto.NotasColumn]));
+                        if (this.IsNotasNull())
+                        {
+                            return string.Empty;
+                        }
+                        else
+                        {
+                            return ((string)(this[this.tableProducto.NotasColumn]));
+                        }
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Notas\' de la tabla \'Producto\' es DBNull.", e);

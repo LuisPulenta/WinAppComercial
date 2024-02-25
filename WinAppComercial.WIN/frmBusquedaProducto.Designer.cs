@@ -47,24 +47,24 @@ namespace WinAppComercial.WIN
             this.descripcionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.iDProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDepartamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSWIN = new WinAppComercial.WIN.DSWIN();
-            this.iDIVADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.iVABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.medidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.medidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.ProductoTableAdapter();
             this.departamentoTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.DepartamentoTableAdapter();
             this.iVATableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.IVATableAdapter();
             this.medidaTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.MedidaTableAdapter();
+            this.iDProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDepartamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.iDIVADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.medidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.fillByToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -178,28 +178,28 @@ namespace WinAppComercial.WIN
             this.tsbBuscar});
             this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(1317, 27);
+            this.fillByToolStrip.Size = new System.Drawing.Size(1317, 31);
             this.fillByToolStrip.TabIndex = 12;
             this.fillByToolStrip.Text = "fillByToolStrip";
             // 
             // descripcionToolStripLabel
             // 
             this.descripcionToolStripLabel.Name = "descripcionToolStripLabel";
-            this.descripcionToolStripLabel.Size = new System.Drawing.Size(90, 24);
+            this.descripcionToolStripLabel.Size = new System.Drawing.Size(90, 28);
             this.descripcionToolStripLabel.Text = "Descripción:";
             // 
             // descripcionToolStripTextBox
             // 
             this.descripcionToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.descripcionToolStripTextBox.Name = "descripcionToolStripTextBox";
-            this.descripcionToolStripTextBox.Size = new System.Drawing.Size(100, 27);
+            this.descripcionToolStripTextBox.Size = new System.Drawing.Size(100, 31);
             // 
             // tsbBuscar
             // 
             this.tsbBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBuscar.Image")));
             this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(29, 24);
+            this.tsbBuscar.Size = new System.Drawing.Size(29, 28);
             this.tsbBuscar.Text = "FillBy";
             this.tsbBuscar.ToolTipText = "Aplica los criterios de búsqueda seleccionados";
             this.tsbBuscar.Click += new System.EventHandler(this.fillByToolStripButton_Click);
@@ -249,6 +249,47 @@ namespace WinAppComercial.WIN
             this.dgvDatos.Size = new System.Drawing.Size(1296, 541);
             this.dgvDatos.TabIndex = 11;
             // 
+            // departamentoBindingSource
+            // 
+            this.departamentoBindingSource.DataMember = "Departamento";
+            this.departamentoBindingSource.DataSource = this.dSWIN;
+            // 
+            // dSWIN
+            // 
+            this.dSWIN.DataSetName = "DSWIN";
+            this.dSWIN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iVABindingSource
+            // 
+            this.iVABindingSource.DataMember = "IVA";
+            this.iVABindingSource.DataSource = this.dSWIN;
+            // 
+            // medidaBindingSource
+            // 
+            this.medidaBindingSource.DataMember = "Medida";
+            this.medidaBindingSource.DataSource = this.dSWIN;
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataMember = "Producto";
+            this.productoBindingSource.DataSource = this.dSWIN;
+            // 
+            // productoTableAdapter
+            // 
+            this.productoTableAdapter.ClearBeforeFill = true;
+            // 
+            // departamentoTableAdapter
+            // 
+            this.departamentoTableAdapter.ClearBeforeFill = true;
+            // 
+            // iVATableAdapter
+            // 
+            this.iVATableAdapter.ClearBeforeFill = true;
+            // 
+            // medidaTableAdapter
+            // 
+            this.medidaTableAdapter.ClearBeforeFill = true;
+            // 
             // iDProductoDataGridViewTextBoxColumn
             // 
             this.iDProductoDataGridViewTextBoxColumn.DataPropertyName = "IDProducto";
@@ -281,16 +322,6 @@ namespace WinAppComercial.WIN
             this.iDDepartamentoDataGridViewTextBoxColumn.ValueMember = "IDDepartamento";
             this.iDDepartamentoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // departamentoBindingSource
-            // 
-            this.departamentoBindingSource.DataMember = "Departamento";
-            this.departamentoBindingSource.DataSource = this.dSWIN;
-            // 
-            // dSWIN
-            // 
-            this.dSWIN.DataSetName = "DSWIN";
-            this.dSWIN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // iDIVADataGridViewTextBoxColumn
             // 
             this.iDIVADataGridViewTextBoxColumn.DataPropertyName = "IDIVA";
@@ -304,11 +335,6 @@ namespace WinAppComercial.WIN
             this.iDIVADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.iDIVADataGridViewTextBoxColumn.ValueMember = "IDIVA";
             this.iDIVADataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iVABindingSource
-            // 
-            this.iVABindingSource.DataMember = "IVA";
-            this.iVABindingSource.DataSource = this.dSWIN;
             // 
             // precioDataGridViewTextBoxColumn
             // 
@@ -326,7 +352,6 @@ namespace WinAppComercial.WIN
             this.notasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.notasDataGridViewTextBoxColumn.Name = "notasDataGridViewTextBoxColumn";
             this.notasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.notasDataGridViewTextBoxColumn.Visible = false;
             this.notasDataGridViewTextBoxColumn.Width = 125;
             // 
             // imagenDataGridViewTextBoxColumn
@@ -336,6 +361,7 @@ namespace WinAppComercial.WIN
             this.imagenDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.imagenDataGridViewTextBoxColumn.Name = "imagenDataGridViewTextBoxColumn";
             this.imagenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.imagenDataGridViewTextBoxColumn.Visible = false;
             this.imagenDataGridViewTextBoxColumn.Width = 125;
             // 
             // iDMedidaDataGridViewTextBoxColumn
@@ -343,7 +369,7 @@ namespace WinAppComercial.WIN
             this.iDMedidaDataGridViewTextBoxColumn.DataPropertyName = "IDMedida";
             this.iDMedidaDataGridViewTextBoxColumn.DataSource = this.medidaBindingSource;
             this.iDMedidaDataGridViewTextBoxColumn.DisplayMember = "Descripcion";
-            this.iDMedidaDataGridViewTextBoxColumn.HeaderText = "Id Medida";
+            this.iDMedidaDataGridViewTextBoxColumn.HeaderText = "Unidad";
             this.iDMedidaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDMedidaDataGridViewTextBoxColumn.Name = "iDMedidaDataGridViewTextBoxColumn";
             this.iDMedidaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -351,11 +377,6 @@ namespace WinAppComercial.WIN
             this.iDMedidaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.iDMedidaDataGridViewTextBoxColumn.ValueMember = "IDMedida";
             this.iDMedidaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // medidaBindingSource
-            // 
-            this.medidaBindingSource.DataMember = "Medida";
-            this.medidaBindingSource.DataSource = this.dSWIN;
             // 
             // medidaDataGridViewTextBoxColumn
             // 
@@ -365,27 +386,6 @@ namespace WinAppComercial.WIN
             this.medidaDataGridViewTextBoxColumn.Name = "medidaDataGridViewTextBoxColumn";
             this.medidaDataGridViewTextBoxColumn.ReadOnly = true;
             this.medidaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataMember = "Producto";
-            this.productoBindingSource.DataSource = this.dSWIN;
-            // 
-            // productoTableAdapter
-            // 
-            this.productoTableAdapter.ClearBeforeFill = true;
-            // 
-            // departamentoTableAdapter
-            // 
-            this.departamentoTableAdapter.ClearBeforeFill = true;
-            // 
-            // iVATableAdapter
-            // 
-            this.iVATableAdapter.ClearBeforeFill = true;
-            // 
-            // medidaTableAdapter
-            // 
-            this.medidaTableAdapter.ClearBeforeFill = true;
             // 
             // frmBusquedaProducto
             // 
