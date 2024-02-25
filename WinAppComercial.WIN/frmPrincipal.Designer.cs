@@ -71,6 +71,9 @@ namespace WinAppComercial.WIN
             this.tsbProductos = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.nombresUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbCompras = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -254,8 +257,9 @@ namespace WinAppComercial.WIN
             // 
             this.comprasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("comprasToolStripMenuItem.Image")));
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.comprasToolStripMenuItem.Text = "&Compras";
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // devolucionesToolStripMenuItem
             // 
@@ -264,7 +268,7 @@ namespace WinAppComercial.WIN
             this.aProveedoresToolStripMenuItem});
             this.devolucionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("devolucionesToolStripMenuItem.Image")));
             this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
-            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.devolucionesToolStripMenuItem.Text = "&Devoluciones";
             // 
             // deClientesToolStripMenuItem
@@ -285,21 +289,21 @@ namespace WinAppComercial.WIN
             // 
             this.salidasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salidasToolStripMenuItem.Image")));
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.salidasToolStripMenuItem.Text = "&Salidas";
             // 
             // trasladosToolStripMenuItem
             // 
             this.trasladosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trasladosToolStripMenuItem.Image")));
             this.trasladosToolStripMenuItem.Name = "trasladosToolStripMenuItem";
-            this.trasladosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.trasladosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.trasladosToolStripMenuItem.Text = "&Traslados";
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ventasToolStripMenuItem.Image")));
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ventasToolStripMenuItem.Text = "&Ventas";
             // 
             // consultasToolStripMenuItem
@@ -380,7 +384,10 @@ namespace WinAppComercial.WIN
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.tsbProveedores,
-            this.tsbProductos});
+            this.tsbProductos,
+            this.toolStripSeparator1,
+            this.toolStripSeparator2,
+            this.tsbCompras});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 27);
@@ -430,6 +437,25 @@ namespace WinAppComercial.WIN
             // 
             this.nombresUsuarioToolStripStatusLabel.Name = "nombresUsuarioToolStripStatusLabel";
             this.nombresUsuarioToolStripStatusLabel.Size = new System.Drawing.Size(0, 16);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbCompras
+            // 
+            this.tsbCompras.Image = ((System.Drawing.Image)(resources.GetObject("tsbCompras.Image")));
+            this.tsbCompras.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCompras.Name = "tsbCompras";
+            this.tsbCompras.Size = new System.Drawing.Size(92, 24);
+            this.tsbCompras.Text = "Compras";
+            this.tsbCompras.Click += new System.EventHandler(this.tsbCompras_Click);
             // 
             // frmPrincipal
             // 
@@ -501,5 +527,8 @@ namespace WinAppComercial.WIN
         private System.Windows.Forms.ToolStripButton tsbProductos;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel nombresUsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton tsbCompras;
     }
 }

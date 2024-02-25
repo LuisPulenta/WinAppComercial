@@ -70,6 +70,12 @@
     <Compile Include="frmBusquedaCliente.Designer.cs">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBusquedaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusquedaProducto.Designer.cs">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBusquedaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="frmClientesTemp.Designer.cs">
       <DependentUpon>frmClientesTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="frmConceptos.cs">
       <SubType>Form</SubType>
@@ -178,6 +190,9 @@
     <EmbeddedResource Include="frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBusquedaProducto.resx">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientesTemp.resx">
       <DependentUpon>frmClientesTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConceptos.resx">
       <DependentUpon>frmConceptos.cs</DependentUpon>
