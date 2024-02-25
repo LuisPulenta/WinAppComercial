@@ -69,8 +69,11 @@ namespace WinAppComercial.WIN
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tsbProveedores = new System.Windows.Forms.ToolStripButton();
             this.tsbProductos = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.nombresUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -211,6 +214,7 @@ namespace WinAppComercial.WIN
             this.cambioDeUsuarioToolStripMenuItem.Name = "cambioDeUsuarioToolStripMenuItem";
             this.cambioDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.cambioDeUsuarioToolStripMenuItem.Text = "&Cambio de Usuario";
+            this.cambioDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cambioDeUsuarioToolStripMenuItem_Click);
             // 
             // cambioDeClaveToolStripMenuItem
             // 
@@ -218,6 +222,7 @@ namespace WinAppComercial.WIN
             this.cambioDeClaveToolStripMenuItem.Name = "cambioDeClaveToolStripMenuItem";
             this.cambioDeClaveToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.cambioDeClaveToolStripMenuItem.Text = "Ca&mbio de Clave";
+            this.cambioDeClaveToolStripMenuItem.Click += new System.EventHandler(this.cambioDeClaveToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -410,11 +415,28 @@ namespace WinAppComercial.WIN
             this.tsbProductos.ToolTipText = "Productos";
             this.tsbProductos.Click += new System.EventHandler(this.tsbProductos_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nombresUsuarioToolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // nombresUsuarioToolStripStatusLabel
+            // 
+            this.nombresUsuarioToolStripStatusLabel.Name = "nombresUsuarioToolStripStatusLabel";
+            this.nombresUsuarioToolStripStatusLabel.Size = new System.Drawing.Size(0, 16);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -424,10 +446,13 @@ namespace WinAppComercial.WIN
             this.Text = "--- Sistema Comercial ---";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,5 +499,7 @@ namespace WinAppComercial.WIN
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton tsbProveedores;
         private System.Windows.Forms.ToolStripButton tsbProductos;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel nombresUsuarioToolStripStatusLabel;
     }
 }

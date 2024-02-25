@@ -76,6 +76,18 @@
     <Compile Include="frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCambioClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambioClave.Designer.cs">
+      <DependentUpon>frmCambioClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambioUsuario.Designer.cs">
+      <DependentUpon>frmCambioUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambioClave.resx">
+      <DependentUpon>frmCambioClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambioUsuario.resx">
+      <DependentUpon>frmCambioUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>

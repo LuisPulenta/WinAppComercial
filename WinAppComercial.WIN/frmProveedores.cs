@@ -1,17 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using WinAppComercial.CAD;
 
 namespace WinAppComercial.WIN
 {
     public partial class frmProveedores : Form
     {
+        private CADUsuario usuarioLogueado;
+
+        public CADUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
         public frmProveedores()
         {
             InitializeComponent();
@@ -25,7 +27,17 @@ namespace WinAppComercial.WIN
             // TODO: esta línea de código carga datos en la tabla 'dSWIN.Proveedor' Puede moverla o quitarla según sea necesario.
             this.proveedorTableAdapter.Fill(this.dSWIN.Proveedor);
             dgvDatos.AutoResizeColumns();
+            VerificarPermisos();
         }
+
+        //-----------------------------------------------------------------------------------------
+        private void VerificarPermisos()
+        {
+            bindingNavigatorAddNewItem.Enabled = CADPermisoRol.PermisoRolPuedeModificar(usuarioLogueado.IDRol, this.Name);
+            bindingNavigatorEditItem.Enabled = CADPermisoRol.PermisoRolPuedeModificar(usuarioLogueado.IDRol, this.Name);
+            bindingNavigatorDeleteItem.Enabled = CADPermisoRol.PermisoRolPuedeBorrar(usuarioLogueado.IDRol, this.Name);
+        }
+
 
         //-----------------------------------------------------------------------------------------
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -45,6 +57,7 @@ namespace WinAppComercial.WIN
                 return;
             }
             Habilitar(false);
+            VerificarPermisos();
         }
 
         //-----------------------------------------------------------------------------------------
@@ -88,6 +101,7 @@ namespace WinAppComercial.WIN
             this.proveedorBindingSource.CancelEdit();
             errorProvider1.Clear();
             Habilitar(false);
+            VerificarPermisos();
         }
 
         //-----------------------------------------------------------------------------------------

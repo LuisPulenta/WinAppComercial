@@ -1,17 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using WinAppComercial.CAD;
 
 namespace WinAppComercial.WIN
 {
     public partial class frmPrincipal : Form
     {
+
+        private CADUsuario usuarioLogueado;
+
+        public CADUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -37,6 +41,7 @@ namespace WinAppComercial.WIN
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProveedores miForm = new frmProveedores();
+            miForm.UsuarioLogueado = usuarioLogueado;
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -116,6 +121,48 @@ namespace WinAppComercial.WIN
             frmUsuarios miForm = new frmUsuarios();
             miForm.MdiParent = this;
             miForm.Show();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            nombresUsuarioToolStripStatusLabel.Text = "Usuario: " + usuarioLogueado.Nombres + " " + usuarioLogueado.Apellidos;
+            VerificaCambioClave(sender, e);
+            VerificarPermisos();
+        }
+
+        private void VerificarPermisos()
+        {
+            proveedoresToolStripMenuItem.Visible = CADPermisoRol.PermisoRolPuedeVer(usuarioLogueado.IDRol, "frmProveedores");
+            tsbProveedores.Visible = CADPermisoRol.PermisoRolPuedeVer(usuarioLogueado.IDRol, "frmProveedores");
+        }
+
+
+        private void cambioDeClaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCambioClave miForm = new frmCambioClave();
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.ShowDialog();
+        }
+
+        private void VerificaCambioClave(object sender, System.EventArgs e)
+        {
+            if (usuarioLogueado.FechaModificacionClave.AddDays(30) < DateTime.Now)
+            {
+                cambioDeClaveToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void cambioDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCambioUsuario miForm = new frmCambioUsuario();
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.ShowDialog();
+            if (miForm.UsuarioLogueado != null)
+            {
+                usuarioLogueado = miForm.UsuarioLogueado;
+            }
+            nombresUsuarioToolStripStatusLabel.Text = "Usuario: " + usuarioLogueado.Nombres + " " + usuarioLogueado.Apellidos;
+            VerificarPermisos();
         }
     }
 }
