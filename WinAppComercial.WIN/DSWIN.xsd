@@ -1115,14 +1115,14 @@ SELECT IDRol, Descripcion FROM Rol WHERE (IDRol = @IDRol)</CommandText>
               <xs:element name="IDDepartamento" msprop:Generator_ColumnVarNameInTable="columnIDDepartamento" msprop:Generator_ColumnPropNameInRow="IDDepartamento" msprop:Generator_ColumnPropNameInTable="IDDepartamentoColumn" msprop:Generator_UserColumnName="IDDepartamento" type="xs:int" />
               <xs:element name="IDIVA" msprop:Generator_ColumnVarNameInTable="columnIDIVA" msprop:Generator_ColumnPropNameInRow="IDIVA" msprop:Generator_ColumnPropNameInTable="IDIVAColumn" msprop:Generator_UserColumnName="IDIVA" type="xs:int" />
               <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
-              <xs:element name="Notas" msprop:Generator_ColumnVarNameInTable="columnNotas" msprop:Generator_ColumnPropNameInRow="Notas" msprop:Generator_ColumnPropNameInTable="NotasColumn" msprop:Generator_UserColumnName="Notas" minOccurs="0">
+              <xs:element name="Notas" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Notas" msprop:Generator_ColumnVarNameInTable="columnNotas" msprop:Generator_ColumnPropNameInTable="NotasColumn" msprop:Generator_UserColumnName="Notas" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Imagen" msprop:Generator_ColumnVarNameInTable="columnImagen" msprop:Generator_ColumnPropNameInRow="Imagen" msprop:Generator_ColumnPropNameInTable="ImagenColumn" msprop:Generator_UserColumnName="Imagen" minOccurs="0">
+              <xs:element name="Imagen" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Imagen" msprop:Generator_ColumnVarNameInTable="columnImagen" msprop:Generator_ColumnPropNameInTable="ImagenColumn" msprop:Generator_UserColumnName="Imagen" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />

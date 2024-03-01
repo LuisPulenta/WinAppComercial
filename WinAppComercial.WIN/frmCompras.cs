@@ -266,7 +266,7 @@ namespace WinAppComercial.WIN
 
         private void PersonalizaGrid()
         {
-            dgvDatos.Columns["IDProducto"].HeaderText = "ID Producto";
+            dgvDatos.Columns["IDProducto"].HeaderText = "ID ProductoXXX";
             dgvDatos.Columns["IDProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvDatos.Columns["Descripcion"].HeaderText = "Descripción";

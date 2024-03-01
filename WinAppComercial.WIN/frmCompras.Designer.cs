@@ -524,6 +524,7 @@ namespace WinAppComercial.WIN
             this.Name = "frmCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "--- Compras ---";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCompras_FormClosing);
             this.Load += new System.EventHandler(this.frmCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();

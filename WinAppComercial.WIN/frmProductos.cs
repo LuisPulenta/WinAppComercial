@@ -138,32 +138,7 @@ namespace WinAppComercial.WIN
 
             return true;
         }
-
-        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-            CargarImagen();
-        }
-        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-            CargarImagen();
-        }
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-            CargarImagen();
-        }
-        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-            CargarImagen();
-        }
-        private void bindingNavigatorPositionItem_Changed(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-            CargarImagen();
-        }
+               
         private void LlenarGrillas()
         {
             if (iDProductoTextBox.Text == string.Empty) return;
@@ -249,6 +224,10 @@ namespace WinAppComercial.WIN
                 {
                     pbxImagen.Load("Images\\" + imagenTextBox.Text);
                 }
+                else
+                {
+                    pbxImagen.Image = null;
+                }
             }
         }
 
@@ -299,6 +278,8 @@ namespace WinAppComercial.WIN
             LlenarGrillas();
             CargarImagen();
         }
+
+        
 
         //private void bindingNavigatorPrint_Click(object sender, EventArgs e)
         //{

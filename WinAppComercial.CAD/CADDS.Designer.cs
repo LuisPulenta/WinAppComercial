@@ -3780,7 +3780,9 @@ namespace WinAppComercial.CAD {
                 this.columnIDDepartamento.AllowDBNull = false;
                 this.columnIDIVA.AllowDBNull = false;
                 this.columnPrecio.AllowDBNull = false;
+                this.columnNotas.DefaultValue = ((string)(""));
                 this.columnNotas.MaxLength = 2147483647;
+                this.columnImagen.DefaultValue = ((string)(""));
                 this.columnImagen.MaxLength = 2147483647;
                 this.columnIDMedida.AllowDBNull = false;
                 this.columnIDMedida.MaxLength = 2;

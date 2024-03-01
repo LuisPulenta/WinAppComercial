@@ -5852,11 +5852,11 @@ namespace WinAppComercial.WIN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Notas {
                 get {
-                    try {
-                        return ((string)(this[this.tableProducto.NotasColumn]));
+                    if (this.IsNotasNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Notas\' de la tabla \'Producto\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableProducto.NotasColumn]));
                     }
                 }
                 set {
@@ -5868,11 +5868,11 @@ namespace WinAppComercial.WIN {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Imagen {
                 get {
-                    try {
-                        return ((string)(this[this.tableProducto.ImagenColumn]));
+                    if (this.IsImagenNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Imagen\' de la tabla \'Producto\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableProducto.ImagenColumn]));
                     }
                 }
                 set {
