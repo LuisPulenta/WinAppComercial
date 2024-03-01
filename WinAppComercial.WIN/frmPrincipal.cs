@@ -97,23 +97,17 @@ namespace WinAppComercial.WIN
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmClientes miForm = new frmClientes();
-            miForm.MdiParent = this;
-            miForm.Show();
+            clientesToolStripMenuItem_Click(sender, e);
         }
 
         private void tsbProveedores_Click(object sender, EventArgs e)
         {
-            frmProveedores miForm = new frmProveedores();
-            miForm.MdiParent = this;
-            miForm.Show();
+            proveedoresToolStripMenuItem_Click(sender, e);
         }
 
         private void tsbProductos_Click(object sender, EventArgs e)
         {
-            frmProductos miForm = new frmProductos();
-            miForm.MdiParent = this;
-            miForm.Show();
+            productosToolStripMenuItem1_Click(sender, e);
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)

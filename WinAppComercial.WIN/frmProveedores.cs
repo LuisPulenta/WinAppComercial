@@ -196,6 +196,16 @@ namespace WinAppComercial.WIN
 
             if (rta == DialogResult.No) return;
 
+            if (CADCompra.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
+            {
+                MessageBox.Show(
+                    "No se puede borrar Proveedor porque tiene movimientos",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
             this.Validate();
             this.proveedorBindingSource.RemoveAt(proveedorBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSWIN);

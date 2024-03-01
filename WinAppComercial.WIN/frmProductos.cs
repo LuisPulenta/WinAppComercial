@@ -12,31 +12,21 @@ namespace WinAppComercial.WIN
             InitializeComponent();
         }
 
-        private void productoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.productoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dSWIN);
-
-        }
-
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dSWIN.Bodega' Puede moverla o quitarla según sea necesario.
+            // TODO: esta línea de código carga datos en la tabla 'dSAppComercial.Bodega' Puede moverla o quitarla según sea necesario.
             this.bodegaTableAdapter.Fill(this.dSWIN.Bodega);
-            // TODO: esta línea de código carga datos en la tabla 'dSWIN.Medida' Puede moverla o quitarla según sea necesario.
             this.medidaTableAdapter.Fill(this.dSWIN.Medida);
-            // TODO: esta línea de código carga datos en la tabla 'dSWIN.IVA' Puede moverla o quitarla según sea necesario.
             this.iVATableAdapter.Fill(this.dSWIN.IVA);
-            // TODO: esta línea de código carga datos en la tabla 'dSWIN.Departamento' Puede moverla o quitarla según sea necesario.
             this.departamentoTableAdapter.Fill(this.dSWIN.Departamento);
-            // TODO: esta línea de código carga datos en la tabla 'dSWIN.Producto' Puede moverla o quitarla según sea necesario.
             this.productoTableAdapter.Fill(this.dSWIN.Producto);
-            dgvDatos.AutoResizeColumns();
-            LlenarGrillas(); 
+            LlenarGrillas();
             CargarImagen();
+
+            dgvDatos.AutoResizeColumns();
             barrasDataGridView.AutoResizeColumns();
             bodegasDataGridView.AutoResizeColumns();
+
         }
 
         private void Habilitar(bool campo)
@@ -149,49 +139,48 @@ namespace WinAppComercial.WIN
             return true;
         }
 
-        private void LlenarGrillas()
-        {
-            if (iDProductoTextBox.Text == string.Empty) return;
-            this.barraTableAdapter.FillBy(this.dSWIN.Barra, Convert.ToInt32(iDProductoTextBox.Text));
-            this.bodegaProductoTableAdapter.FillBy(this.dSWIN.BodegaProducto, Convert.ToInt32(iDProductoTextBox.Text));
-            barrasDataGridView.AutoResizeColumns();
-            bodegasDataGridView.AutoResizeColumns();
-        }
-
         private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
         {
             LlenarGrillas();
             CargarImagen();
         }
-
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
             LlenarGrillas();
             CargarImagen();
         }
-
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
             LlenarGrillas();
             CargarImagen();
         }
-
         private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
         {
             LlenarGrillas();
             CargarImagen();
         }
-
-        private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        private void bindingNavigatorPositionItem_Changed(object sender, EventArgs e)
         {
             LlenarGrillas();
             CargarImagen();
         }
-
-        private void iDProductoTextBox_TextChanged(object sender, EventArgs e)
+        private void LlenarGrillas()
         {
-            LlenarGrillas();
-            CargarImagen();
+            if (iDProductoTextBox.Text == string.Empty) return;
+            this.barraTableAdapter.FillBy(this.dSWIN.Barra, Convert.ToInt32(iDProductoTextBox.Text));
+            this.bodegaProductoTableAdapter.FillBy(this.dSWIN.BodegaProducto, Convert.ToInt32(iDProductoTextBox.Text));
+        }
+
+        private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
+        {
+            Habilitar(true);
+        }
+
+        private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)
+        {
+            this.productoBindingSource.CancelEdit();
+            errorProvider1.Clear();
+            Habilitar(false);
         }
 
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -203,17 +192,11 @@ namespace WinAppComercial.WIN
             Habilitar(false);
         }
 
-        private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
-        {
-            Habilitar(true);
-            descripcionTextBox.Focus();
-        }
-
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             Habilitar(true);
             productoBindingSource.AddNew();
-            descripcionTextBox.Focus();
+            iDDepartamentoComboBox.Focus();
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -227,111 +210,30 @@ namespace WinAppComercial.WIN
 
             if (rta == DialogResult.No) return;
 
-            //if (CADKardex.KardexProductoTieneMovimientos(Convert.ToInt32(iDProductoTextBox.Text)))
-            //{
-            //    MessageBox.Show(
-            //        "No se puede borrar Producto porque tiene movimientos",
-            //        "Error",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (CADKardex.KardexProductoTieneMovimientos(Convert.ToInt32(iDProductoTextBox.Text)))
+            {
+                MessageBox.Show(
+                    "No se puede borrar Producto porque tiene movimientos",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
 
             this.Validate();
 
-            //CADBarra.DeleteBarraByIDProducto(Convert.ToInt32(iDProductoTextBox.Text));
-            //CADBodegaProducto.DeleteBodegaProductoByIDProducto(Convert.ToInt32(iDProductoTextBox.Text));
+            CADBarra.DeleteBarraByIDProducto(Convert.ToInt32(iDProductoTextBox.Text));
+            CADBodegaProducto.DeleteBodegaProductoByIDProducto(Convert.ToInt32(iDProductoTextBox.Text));
             this.productoBindingSource.RemoveAt(productoBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSWIN);
             CargarImagen();
-        }
 
-        private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)
-        {
-            this.productoBindingSource.CancelEdit();
-            errorProvider1.Clear();
-            Habilitar(false);
-        }
-
-        //private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
-        //{
-        //    frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
-        //    miBusqueda.ShowDialog();
-        //    if (miBusqueda.IDElegido == 0) return;
-        //    int position = productoBindingSource.Find("IDProducto", miBusqueda.IDElegido);
-        //    productoBindingSource.Position = position;
-        //    LlenarGrillas();
-        //    CargarImagen();
-        //}
-
-        private void bindingNavigatorPrint_Click(object sender, EventArgs e)
-        {
-            //frmListadoProductos miForm = new frmListadoProductos();
-            //miForm.ShowDialog();
-        }
-
-        //private void btnBuscarImagen_Click(object sender, EventArgs e)
-        //{
-        //    openFileDialog1.ShowDialog();
-        //    imagenTextBox.Text = openFileDialog1.SafeFileName;
-        //    CargarImagen();
-        //}
-
-       
-
-        //private void btnAgregarBarra_Click(object sender, EventArgs e)
-        //{
-        //    frmBarras miForm = new frmBarras();
-        //    miForm.ShowDialog();
-        //    if (miForm.Barra == 0) return;
-        //    CADBarra.BarraInsert(Convert.ToInt32(iDProductoTextBox.Text), miForm.Barra);
-        //    this.barraTableAdapter.FillBy(this.dSAppComercial.Barra, Convert.ToInt32(iDProductoTextBox.Text));
-        //}
-
-        //private void btnEliminarBarra_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult rta = MessageBox.Show(
-        //    "¿Está seguro de borrar el Código de Barras?",
-        //    "Confirmación",
-        //    MessageBoxButtons.YesNo,
-        //    MessageBoxIcon.Question,
-        //    MessageBoxDefaultButton.Button2);
-        //    if (rta == DialogResult.No) return;
-        //    long barra = (long)barrasDataGridView.Rows[barraBindingSource.Position].Cells[0].Value;
-        //    CADBarra.BarraDelete(barra);
-        //    this.barraTableAdapter.FillBy(this.dSWIN.Barra, Convert.ToInt32(iDProductoTextBox.Text));
-        //}
-
-        //private void btnAgregarBodega_Click(object sender, EventArgs e)
-        //{
-        //    frmParametrosBodega miForm = new frmParametrosBodega();
-        //    miForm.IDProducto = Convert.ToInt32(iDProductoTextBox.Text);
-        //    miForm.ShowDialog();
-        //    this.bodegaProductoTableAdapter.FillBy(this.dSWIN.BodegaProducto, Convert.ToInt32(iDProductoTextBox.Text));
-        //}
-
-        //private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
-        //{
-        //    frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
-        //    miBusqueda.ShowDialog();
-        //    if (miBusqueda.IDElegido == 0) return;
-        //    int position = productoBindingSource.Find("IDProducto", miBusqueda.IDElegido);
-        //    productoBindingSource.Position = position;
-        //    LlenarGrillas();
-        //    CargarImagen();
-        //}
-
-        private void productoBindingSource_PositionChanged(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-            CargarImagen();
         }
 
         private void btnBuscarImagen_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            //imagenTextBox.Text = openFileDialog1.SafeFileName;
-            imagenTextBox.Text = openFileDialog1.FileName;
+            imagenTextBox.Text = openFileDialog1.SafeFileName;
             CargarImagen();
         }
 
@@ -343,11 +245,9 @@ namespace WinAppComercial.WIN
             }
             else
             {
-                //if (File.Exists("Images\\" + imagenTextBox.Text))
-                if (File.Exists(imagenTextBox.Text))
-                    {
-                    //pbxImagen.Load("Images\\" + imagenTextBox.Text);
-                    pbxImagen.Load(imagenTextBox.Text);
+                if (File.Exists("Images\\" + imagenTextBox.Text))
+                {
+                    pbxImagen.Load("Images\\" + imagenTextBox.Text);
                 }
             }
         }
@@ -370,7 +270,7 @@ namespace WinAppComercial.WIN
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
             if (rta == DialogResult.No) return;
-            long barra = (long)barrasDataGridView.Rows[barraBindingSource.Position].Cells[1].Value;
+            long barra = (long)barrasDataGridView.Rows[barraBindingSource.Position].Cells[0].Value;
             CADBarra.BarraDelete(barra);
             this.barraTableAdapter.FillBy(this.dSWIN.Barra, Convert.ToInt32(iDProductoTextBox.Text));
         }
@@ -390,8 +290,20 @@ namespace WinAppComercial.WIN
             if (miBusqueda.IDElegido == 0) return;
             int position = productoBindingSource.Find("IDProducto", miBusqueda.IDElegido);
             productoBindingSource.Position = position;
+            LlenarGrillas();
+            CargarImagen();
         }
+
+        private void productoBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            LlenarGrillas();
+            CargarImagen();
+        }
+
+        //private void bindingNavigatorPrint_Click(object sender, EventArgs e)
+        //{
+        //    frmListadoProductos miForm = new frmListadoProductos();
+        //    miForm.ShowDialog();
+        //}
     }
 }
-
-//C:\WinAppComercial\Recursos\products

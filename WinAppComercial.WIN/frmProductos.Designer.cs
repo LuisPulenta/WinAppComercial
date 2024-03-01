@@ -367,7 +367,7 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            this.bindingNavigatorPositionItem.Click += new System.EventHandler(this.bindingNavigatorPositionItem_Click);
+            this.bindingNavigatorPositionItem.Click += new System.EventHandler(this.bindingNavigatorPositionItem_Changed);
             // 
             // bindingNavigatorSeparator1
             // 
@@ -471,7 +471,6 @@ namespace WinAppComercial.WIN
             this.bindingNavigatorPrint.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorPrint.Text = "toolStripButton1";
             this.bindingNavigatorPrint.ToolTipText = "Listado de Productos";
-            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -1077,7 +1076,6 @@ namespace WinAppComercial.WIN
             this.iDProductoTextBox.ReadOnly = true;
             this.iDProductoTextBox.Size = new System.Drawing.Size(100, 22);
             this.iDProductoTextBox.TabIndex = 23;
-            this.iDProductoTextBox.TextChanged += new System.EventHandler(this.iDProductoTextBox_TextChanged);
             // 
             // barraTableAdapter
             // 

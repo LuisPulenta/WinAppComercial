@@ -359,9 +359,69 @@ namespace WinAppComercial.WIN
             int IDBodega = (int)bodegaComboBox.SelectedValue;
             DateTime fecha = fechaDateTimePicker.Value;
 
-            //int IDCompra = Operaciones.GrabarCompra(IDBodega, IDProveedor, fecha, misDetalles);
-            int IDCompra = 1;
-            
+            //Grabamos la Cabecera de la Compra
+            int IDCompra = CADCompra.CompraInsertCompra(
+                fecha,
+                IDProveedor,
+                IDBodega);
+
+            //Grabamos el Detalle de la Compra
+            foreach (DetalleCompra midetalle in misDetalles)
+            {
+                //Actualizamos la Tabla BodegaProducto
+                CADBodegaProducto miBodegaProducto = CADBodegaProducto.BodegaProductoGetBodegaProductoByIDBodegaAndIDProducto(IDBodega, midetalle.IDProducto);
+
+                if (miBodegaProducto == null)
+                {
+                    CADBodegaProducto.BodegaProductoUpdate(IDBodega, midetalle.IDProducto, 1, 1, 1, 1);
+
+                }
+                CADBodegaProducto.BodegaProductoActualizaStock(midetalle.Cantidad, IDBodega, midetalle.IDProducto);
+
+                //Actualizamos el Kardex
+                CADKardex miKardex = CADKardex.KardexUltimoKardex(IDBodega, midetalle.IDProducto);
+
+                int IDKardex;
+                float nuevoSaldo;
+                decimal nuevoCostoPromedio;
+                decimal nuevoUltimoCosto;
+
+                if (miKardex == null)
+                {
+                    nuevoSaldo = midetalle.Cantidad;
+                    nuevoCostoPromedio = midetalle.valorNeto / (decimal)midetalle.Cantidad;
+                    nuevoUltimoCosto = nuevoCostoPromedio;
+                }
+                else
+                {
+                    nuevoSaldo = miKardex.Saldo + midetalle.Cantidad;
+                    nuevoCostoPromedio = (miKardex.CostoPromedio * (decimal)miKardex.Saldo
+                        + midetalle.valorNeto) / (decimal)nuevoSaldo;
+                    nuevoUltimoCosto = midetalle.valorNeto / (decimal)midetalle.Cantidad;
+                }
+
+                IDKardex = CADKardex.KardexInsertKardex(
+                        IDBodega,
+                        midetalle.IDProducto,
+                        fecha,
+                        string.Format("CO-{0}", IDCompra),
+                        midetalle.Cantidad,
+                        0,
+                        nuevoSaldo,
+                        nuevoUltimoCosto,
+                        nuevoCostoPromedio);
+
+                //Actualizamos CompraDetalle
+                CADCompraDetalle.CompraDetalleInsertCompraDetalle(
+                    IDCompra,
+                    midetalle.IDProducto,
+                    midetalle.Descripcion,
+                    midetalle.Costo,
+                    midetalle.Cantidad,
+                    IDKardex, midetalle.PorcentajeIVA,
+                    midetalle.PorcentajeDescuento);
+            }
+
             MessageBox.Show(
                 string.Format("La Compra {0}, fue grabada de forma exitosa", IDCompra),
                 "Confirmación",
@@ -479,5 +539,6 @@ namespace WinAppComercial.WIN
             }
 
         }
+
     }
 }

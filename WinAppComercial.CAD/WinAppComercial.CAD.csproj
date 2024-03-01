@@ -44,6 +44,8 @@
     <Compile Include="CADBarra.cs" />
     <Compile Include="CADBodegaProducto.cs" />
     <Compile Include="CADCliente.cs" />
+    <Compile Include="CADCompra.cs" />
+    <Compile Include="CADCompraDetalle.cs" />
     <Compile Include="CADDS.cs">
       <DependentUpon>CADDS.xsd</DependentUpon>
     </Compile>
@@ -53,6 +55,7 @@
       <DependentUpon>CADDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="CADIVA.cs" />
+    <Compile Include="CADKardex.cs" />
     <Compile Include="CADPermisoRol.cs" />
     <Compile Include="CADProducto.cs" />
     <Compile Include="CADUsuario.cs" />

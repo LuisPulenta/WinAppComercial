@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinAppComercial.CAD;
 
 namespace WinAppComercial.WIN
 {
@@ -102,6 +103,16 @@ namespace WinAppComercial.WIN
                 MessageBoxDefaultButton.Button2);
 
             if (rta == DialogResult.No) return;
+
+            if (CADKardex.KardexBodegaTieneMovimientos(Convert.ToInt32(iDBodegaTextBox.Text)))
+            {
+                MessageBox.Show(
+                    "No se puede borrar Bodega porque tiene movimientos",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
 
             this.Validate();
             this.bodegaBindingSource.RemoveAt(bodegaBindingSource.Position);

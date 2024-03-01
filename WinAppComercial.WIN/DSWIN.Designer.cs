@@ -8905,14 +8905,14 @@ AND ApellidosContacto LIKE @ApellidosContacto
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Departamento] ([Descripcion]) VALUES (@Descripcion);\r\nSELECT I" +
                 "DDepartamento, Descripcion FROM Departamento WHERE (IDDepartamento = SCOPE_IDENT" +
-                "ITY())";
+                "ITY()) ORDER BY Descripcion";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Departamento] SET [Descripcion] = @Descripcion WHERE (([IDDepartame" +
                 "nto] = @Original_IDDepartamento));\r\nSELECT IDDepartamento, Descripcion FROM Depa" +
-                "rtamento WHERE (IDDepartamento = @IDDepartamento)";
+                "rtamento WHERE (IDDepartamento = @IDDepartamento) ORDER BY Descripcion";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDDepartamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDepartamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -8932,7 +8932,7 @@ AND ApellidosContacto LIKE @ApellidosContacto
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IDDepartamento, Descripcion FROM dbo.Departamento";
+            this._commandCollection[0].CommandText = "SELECT IDDepartamento, Descripcion FROM dbo.Departamento\r\nORDER BY Descripcion ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
