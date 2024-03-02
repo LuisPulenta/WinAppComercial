@@ -167,6 +167,19 @@ namespace WinAppComercial.WIN
             miForm.Show();
         }
 
+        private void tsbKardex_Click(object sender, EventArgs e)
+        {
+            kardexToolStripMenuItem_Click(sender, e);
+        }
+
+        private void kardexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaKardex miForm = new frmConsultaKardex();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
         private void tsbCompras_Click(object sender, EventArgs e)
         {
             comprasToolStripMenuItem_Click(sender, e);
