@@ -72,6 +72,7 @@ namespace WinAppComercial.WIN
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCompras = new System.Windows.Forms.ToolStripButton();
+            this.tsbVentas = new System.Windows.Forms.ToolStripButton();
             this.tsbKardex = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.nombresUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -306,6 +307,7 @@ namespace WinAppComercial.WIN
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.ventasToolStripMenuItem.Text = "&Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -390,6 +392,7 @@ namespace WinAppComercial.WIN
             this.toolStripSeparator1,
             this.toolStripSeparator2,
             this.tsbCompras,
+            this.tsbVentas,
             this.tsbKardex});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
@@ -443,6 +446,15 @@ namespace WinAppComercial.WIN
             this.tsbCompras.Size = new System.Drawing.Size(92, 24);
             this.tsbCompras.Text = "Compras";
             this.tsbCompras.Click += new System.EventHandler(this.tsbCompras_Click);
+            // 
+            // tsbVentas
+            // 
+            this.tsbVentas.Image = ((System.Drawing.Image)(resources.GetObject("tsbVentas.Image")));
+            this.tsbVentas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVentas.Name = "tsbVentas";
+            this.tsbVentas.Size = new System.Drawing.Size(76, 24);
+            this.tsbVentas.Text = "Ventas";
+            this.tsbVentas.Click += new System.EventHandler(this.tsbVentas_Click);
             // 
             // tsbKardex
             // 
@@ -543,5 +555,6 @@ namespace WinAppComercial.WIN
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsbKardex;
         private System.Windows.Forms.ToolStripButton tsbCompras;
+        private System.Windows.Forms.ToolStripButton tsbVentas;
     }
 }

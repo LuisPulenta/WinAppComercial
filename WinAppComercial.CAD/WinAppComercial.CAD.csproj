@@ -59,7 +59,10 @@
     <Compile Include="CADPermisoRol.cs" />
     <Compile Include="CADProducto.cs" />
     <Compile Include="CADUsuario.cs" />
+    <Compile Include="CADVenta.cs" />
+    <Compile Include="CADVentaDetalle.cs" />
     <Compile Include="DetalleCompra.cs" />
+    <Compile Include="DetalleVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

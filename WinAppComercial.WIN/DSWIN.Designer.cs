@@ -8721,7 +8721,7 @@ AND ApellidosContacto LIKE @ApellidosContacto
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Cliente] ([IDTipoDocumento], [Documento], [NombreComercial], [NombresContacto], [ApellidosContacto], [Direccion], [Telefono1], [Telefono2], [Correo], [Notas], [Aniversario]) VALUES (@IDTipoDocumento, @Documento, @NombreComercial, @NombresContacto, @ApellidosContacto, @Direccion, @Telefono1, @Telefono2, @Correo, @Notas, @Aniversario);
-SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, ApellidosContacto, Direccion, Telefono1, Telefono2, Correo, Notas, Aniversario FROM Cliente WHERE (IDCliente = SCOPE_IDENTITY())";
+SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, ApellidosContacto, Direccion, Telefono1, Telefono2, Correo, Notas, Aniversario FROM Cliente WHERE (IDCliente = SCOPE_IDENTITY()) ORDER BY NombreComercial";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDTipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDTipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Documento", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Documento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8737,7 +8737,7 @@ SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, 
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cliente] SET [IDTipoDocumento] = @IDTipoDocumento, [Documento] = @Documento, [NombreComercial] = @NombreComercial, [NombresContacto] = @NombresContacto, [ApellidosContacto] = @ApellidosContacto, [Direccion] = @Direccion, [Telefono1] = @Telefono1, [Telefono2] = @Telefono2, [Correo] = @Correo, [Notas] = @Notas, [Aniversario] = @Aniversario WHERE (([IDCliente] = @Original_IDCliente) AND ([IDTipoDocumento] = @Original_IDTipoDocumento) AND ([Documento] = @Original_Documento) AND ((@IsNull_Aniversario = 1 AND [Aniversario] IS NULL) OR ([Aniversario] = @Original_Aniversario)));
-SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, ApellidosContacto, Direccion, Telefono1, Telefono2, Correo, Notas, Aniversario FROM Cliente WHERE (IDCliente = @IDCliente)";
+SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, ApellidosContacto, Direccion, Telefono1, Telefono2, Correo, Notas, Aniversario FROM Cliente WHERE (IDCliente = @IDCliente) ORDER BY NombreComercial";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDTipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDTipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Documento", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Documento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8773,17 +8773,11 @@ SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, 
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, A" +
                 "pellidosContacto, Direccion, Telefono1, Telefono2, Correo, Notas, Aniversario FR" +
-                "OM dbo.Cliente";
+                "OM dbo.Cliente\r\nORDER BY NombreComercial";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT IDCliente, IDTipoDocumento, Documento, NombreComercial, NombresContacto, ApellidosContacto, Direccion, Telefono1, Telefono2, Correo, Notas, Aniversario 
-FROM dbo.Cliente
-WHERE Documento LIKE @Documento 
-AND NombreComercial LIKE @NombreComercial 
-AND NombresContacto LIKE @NombresContacto 
-AND ApellidosContacto LIKE @ApellidosContacto
-";
+            this._commandCollection[1].CommandText = @"SELECT Aniversario, ApellidosContacto, Correo, Direccion, Documento, IDCliente, IDTipoDocumento, NombreComercial, NombresContacto, Notas, Telefono1, Telefono2 FROM Cliente WHERE (Documento LIKE @Documento) AND (NombreComercial LIKE @NombreComercial) AND (NombresContacto LIKE @NombresContacto) AND (ApellidosContacto LIKE @ApellidosContacto) ORDER BY NombreComercial";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Documento", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Documento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreComercial", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "NombreComercial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
