@@ -58,10 +58,13 @@ namespace WinAppComercial.WIN
             this.cantidadTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSWIN = new WinAppComercial.WIN.DSWIN();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.bodegaComboBox = new System.Windows.Forms.ComboBox();
+            this.bodegaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
@@ -70,17 +73,14 @@ namespace WinAppComercial.WIN
             this.productoLabel = new System.Windows.Forms.Label();
             this.productoTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dSWIN = new WinAppComercial.WIN.DSWIN();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.ClienteTableAdapter();
-            this.bodegaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bodegaTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.BodegaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSWIN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSWIN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // eliminarTodoButton
@@ -347,6 +347,16 @@ namespace WinAppComercial.WIN
             this.clienteComboBox.TabIndex = 71;
             this.clienteComboBox.ValueMember = "IDCliente";
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.dSWIN;
+            // 
+            // dSWIN
+            // 
+            this.dSWIN.DataSetName = "DSWIN";
+            this.dSWIN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -382,6 +392,11 @@ namespace WinAppComercial.WIN
             this.bodegaComboBox.Size = new System.Drawing.Size(263, 24);
             this.bodegaComboBox.TabIndex = 74;
             this.bodegaComboBox.ValueMember = "IDBodega";
+            // 
+            // bodegaBindingSource
+            // 
+            this.bodegaBindingSource.DataMember = "Bodega";
+            this.bodegaBindingSource.DataSource = this.dSWIN;
             // 
             // btnBuscarCliente
             // 
@@ -454,24 +469,9 @@ namespace WinAppComercial.WIN
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dSWIN
-            // 
-            this.dSWIN.DataSetName = "DSWIN";
-            this.dSWIN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.dSWIN;
-            // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // bodegaBindingSource
-            // 
-            this.bodegaBindingSource.DataMember = "Bodega";
-            this.bodegaBindingSource.DataSource = this.dSWIN;
             // 
             // bodegaTableAdapter
             // 
@@ -526,13 +526,14 @@ namespace WinAppComercial.WIN
             this.Name = "frmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "--- Ventas ---";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVentas_FormClosing);
             this.Load += new System.EventHandler(this.frmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSWIN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSWIN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

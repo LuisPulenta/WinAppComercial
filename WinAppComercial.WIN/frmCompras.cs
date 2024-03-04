@@ -43,6 +43,7 @@ namespace WinAppComercial.WIN
             fechaDateTimePicker.Value = DateTime.Now;
             productoLabel.Text = string.Empty;
             dgvDatos.DataSource = misDetalles;
+            PersonalizaGrid();
         }
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
@@ -218,10 +219,12 @@ namespace WinAppComercial.WIN
 
             pbxImagen.Image = null;
 
-            RefrescaGrid();
-            LimpiarControles();
             dgvDatos.DataSource = null;
             dgvDatos.DataSource = misDetalles;
+
+            RefrescaGrid();
+            LimpiarControles();
+            
         }
 
         private void LimpiarControles()
@@ -266,7 +269,7 @@ namespace WinAppComercial.WIN
 
         private void PersonalizaGrid()
         {
-            dgvDatos.Columns["IDProducto"].HeaderText = "ID ProductoXXX";
+            dgvDatos.Columns["IDProducto"].HeaderText = "ID Producto";
             dgvDatos.Columns["IDProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvDatos.Columns["Descripcion"].HeaderText = "Descripción";

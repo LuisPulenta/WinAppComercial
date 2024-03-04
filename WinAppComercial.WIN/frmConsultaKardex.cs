@@ -134,5 +134,7 @@ namespace WinAppComercial.WIN
         {
             ActualizarDatos();
         }
+
+       
     }
 }

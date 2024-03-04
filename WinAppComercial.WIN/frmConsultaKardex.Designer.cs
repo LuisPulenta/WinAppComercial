@@ -31,7 +31,16 @@ namespace WinAppComercial.WIN
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaKardex));
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.productoLabel = new System.Windows.Forms.Label();
@@ -43,6 +52,10 @@ namespace WinAppComercial.WIN
             this.dSWIN = new WinAppComercial.WIN.DSWIN();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.kardexBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bodegaTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.BodegaTableAdapter();
+            this.kardexTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.KardexTableAdapter();
             this.iDKardexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDBodegaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +66,6 @@ namespace WinAppComercial.WIN
             this.saldoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ultimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kardexBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bodegaTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.BodegaTableAdapter();
-            this.kardexTableAdapter = new WinAppComercial.WIN.DSWINTableAdapters.KardexTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSWIN)).BeginInit();
@@ -165,111 +174,21 @@ namespace WinAppComercial.WIN
             this.ultimoCostoDataGridViewTextBoxColumn,
             this.costoPromedioDataGridViewTextBoxColumn});
             this.dgvDatos.DataSource = this.kardexBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDatos.Location = new System.Drawing.Point(1, 261);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(961, 403);
+            this.dgvDatos.Size = new System.Drawing.Size(953, 407);
             this.dgvDatos.TabIndex = 26;
-            // 
-            // iDKardexDataGridViewTextBoxColumn
-            // 
-            this.iDKardexDataGridViewTextBoxColumn.DataPropertyName = "IDKardex";
-            this.iDKardexDataGridViewTextBoxColumn.HeaderText = "IDKardex";
-            this.iDKardexDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDKardexDataGridViewTextBoxColumn.Name = "iDKardexDataGridViewTextBoxColumn";
-            this.iDKardexDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDKardexDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDBodegaDataGridViewTextBoxColumn
-            // 
-            this.iDBodegaDataGridViewTextBoxColumn.DataPropertyName = "IDBodega";
-            this.iDBodegaDataGridViewTextBoxColumn.HeaderText = "IDBodega";
-            this.iDBodegaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDBodegaDataGridViewTextBoxColumn.Name = "iDBodegaDataGridViewTextBoxColumn";
-            this.iDBodegaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDBodegaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDProductoDataGridViewTextBoxColumn
-            // 
-            this.iDProductoDataGridViewTextBoxColumn.DataPropertyName = "IDProducto";
-            this.iDProductoDataGridViewTextBoxColumn.HeaderText = "IDProducto";
-            this.iDProductoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDProductoDataGridViewTextBoxColumn.Name = "iDProductoDataGridViewTextBoxColumn";
-            this.iDProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDProductoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // documentoDataGridViewTextBoxColumn
-            // 
-            this.documentoDataGridViewTextBoxColumn.DataPropertyName = "Documento";
-            this.documentoDataGridViewTextBoxColumn.HeaderText = "Documento";
-            this.documentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.documentoDataGridViewTextBoxColumn.Name = "documentoDataGridViewTextBoxColumn";
-            this.documentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documentoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // entradaDataGridViewTextBoxColumn
-            // 
-            this.entradaDataGridViewTextBoxColumn.DataPropertyName = "Entrada";
-            this.entradaDataGridViewTextBoxColumn.HeaderText = "Entrada";
-            this.entradaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.entradaDataGridViewTextBoxColumn.Name = "entradaDataGridViewTextBoxColumn";
-            this.entradaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.entradaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // salidaDataGridViewTextBoxColumn
-            // 
-            this.salidaDataGridViewTextBoxColumn.DataPropertyName = "Salida";
-            this.salidaDataGridViewTextBoxColumn.HeaderText = "Salida";
-            this.salidaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.salidaDataGridViewTextBoxColumn.Name = "salidaDataGridViewTextBoxColumn";
-            this.salidaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.salidaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // saldoDataGridViewTextBoxColumn
-            // 
-            this.saldoDataGridViewTextBoxColumn.DataPropertyName = "Saldo";
-            this.saldoDataGridViewTextBoxColumn.HeaderText = "Saldo";
-            this.saldoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.saldoDataGridViewTextBoxColumn.Name = "saldoDataGridViewTextBoxColumn";
-            this.saldoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.saldoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ultimoCostoDataGridViewTextBoxColumn
-            // 
-            this.ultimoCostoDataGridViewTextBoxColumn.DataPropertyName = "UltimoCosto";
-            this.ultimoCostoDataGridViewTextBoxColumn.HeaderText = "UltimoCosto";
-            this.ultimoCostoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ultimoCostoDataGridViewTextBoxColumn.Name = "ultimoCostoDataGridViewTextBoxColumn";
-            this.ultimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ultimoCostoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // costoPromedioDataGridViewTextBoxColumn
-            // 
-            this.costoPromedioDataGridViewTextBoxColumn.DataPropertyName = "CostoPromedio";
-            this.costoPromedioDataGridViewTextBoxColumn.HeaderText = "CostoPromedio";
-            this.costoPromedioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.costoPromedioDataGridViewTextBoxColumn.Name = "costoPromedioDataGridViewTextBoxColumn";
-            this.costoPromedioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.costoPromedioDataGridViewTextBoxColumn.Width = 125;
             // 
             // kardexBindingSource
             // 
@@ -288,12 +207,124 @@ namespace WinAppComercial.WIN
             // 
             this.kardexTableAdapter.ClearBeforeFill = true;
             // 
+            // iDKardexDataGridViewTextBoxColumn
+            // 
+            this.iDKardexDataGridViewTextBoxColumn.DataPropertyName = "IDKardex";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDKardexDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.iDKardexDataGridViewTextBoxColumn.HeaderText = "ID Kardex";
+            this.iDKardexDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDKardexDataGridViewTextBoxColumn.Name = "iDKardexDataGridViewTextBoxColumn";
+            this.iDKardexDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDKardexDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // iDBodegaDataGridViewTextBoxColumn
+            // 
+            this.iDBodegaDataGridViewTextBoxColumn.DataPropertyName = "IDBodega";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDBodegaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.iDBodegaDataGridViewTextBoxColumn.HeaderText = "ID Bodega";
+            this.iDBodegaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDBodegaDataGridViewTextBoxColumn.Name = "iDBodegaDataGridViewTextBoxColumn";
+            this.iDBodegaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDBodegaDataGridViewTextBoxColumn.Visible = false;
+            this.iDBodegaDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // iDProductoDataGridViewTextBoxColumn
+            // 
+            this.iDProductoDataGridViewTextBoxColumn.DataPropertyName = "IDProducto";
+            this.iDProductoDataGridViewTextBoxColumn.HeaderText = "ID Producto";
+            this.iDProductoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDProductoDataGridViewTextBoxColumn.Name = "iDProductoDataGridViewTextBoxColumn";
+            this.iDProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDProductoDataGridViewTextBoxColumn.Visible = false;
+            this.iDProductoDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // documentoDataGridViewTextBoxColumn
+            // 
+            this.documentoDataGridViewTextBoxColumn.DataPropertyName = "Documento";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.documentoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.documentoDataGridViewTextBoxColumn.HeaderText = "Documento";
+            this.documentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.documentoDataGridViewTextBoxColumn.Name = "documentoDataGridViewTextBoxColumn";
+            this.documentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // entradaDataGridViewTextBoxColumn
+            // 
+            this.entradaDataGridViewTextBoxColumn.DataPropertyName = "Entrada";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            this.entradaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.entradaDataGridViewTextBoxColumn.HeaderText = "Entrada";
+            this.entradaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.entradaDataGridViewTextBoxColumn.Name = "entradaDataGridViewTextBoxColumn";
+            this.entradaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salidaDataGridViewTextBoxColumn
+            // 
+            this.salidaDataGridViewTextBoxColumn.DataPropertyName = "Salida";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            this.salidaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.salidaDataGridViewTextBoxColumn.HeaderText = "Salida";
+            this.salidaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salidaDataGridViewTextBoxColumn.Name = "salidaDataGridViewTextBoxColumn";
+            this.salidaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // saldoDataGridViewTextBoxColumn
+            // 
+            this.saldoDataGridViewTextBoxColumn.DataPropertyName = "Saldo";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            this.saldoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.saldoDataGridViewTextBoxColumn.HeaderText = "Saldo";
+            this.saldoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.saldoDataGridViewTextBoxColumn.Name = "saldoDataGridViewTextBoxColumn";
+            this.saldoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ultimoCostoDataGridViewTextBoxColumn
+            // 
+            this.ultimoCostoDataGridViewTextBoxColumn.DataPropertyName = "UltimoCosto";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C2";
+            this.ultimoCostoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ultimoCostoDataGridViewTextBoxColumn.HeaderText = "Ultimo Costo";
+            this.ultimoCostoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ultimoCostoDataGridViewTextBoxColumn.Name = "ultimoCostoDataGridViewTextBoxColumn";
+            this.ultimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ultimoCostoDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // costoPromedioDataGridViewTextBoxColumn
+            // 
+            this.costoPromedioDataGridViewTextBoxColumn.DataPropertyName = "CostoPromedio";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.costoPromedioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.costoPromedioDataGridViewTextBoxColumn.HeaderText = "Costo Promedio";
+            this.costoPromedioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.costoPromedioDataGridViewTextBoxColumn.Name = "costoPromedioDataGridViewTextBoxColumn";
+            this.costoPromedioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.costoPromedioDataGridViewTextBoxColumn.Width = 120;
+            // 
             // frmConsultaKardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(962, 670);
+            this.ClientSize = new System.Drawing.Size(961, 670);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.productoLabel);
             this.Controls.Add(this.productoTextBox);

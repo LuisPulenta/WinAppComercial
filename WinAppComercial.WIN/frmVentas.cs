@@ -38,6 +38,8 @@ namespace WinAppComercial.WIN
             clienteComboBox.SelectedIndex = -1;
             bodegaComboBox.SelectedIndex = -1;
             productoLabel.Text = string.Empty;
+            dgvDatos.DataSource = misDetalles;
+            PersonalizaGrid();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
