@@ -22,16 +22,10 @@ namespace WinAppComercial.WIN
 
         private void frmConsultaKardex_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dSWIN.Kardex' Puede moverla o quitarla según sea necesario.
-            //this.kardexTableAdapter.Fill(this.dSWIN.Kardex);
-
-            // TODO: esta línea de código carga datos en la tabla 'dSWIN.Bodega' Puede moverla o quitarla según sea necesario.
             bodegaTableAdapter.Fill(dSWIN.Bodega);
             bodegaTableAdapter.Fill(dSWIN.Bodega);
             bodegaComboBox.SelectedIndex = -1;
-            //bodegaComboBox.SelectedValue = 0;
             productoLabel.Text = string.Empty;
-            //this.kardexTableAdapter.FillBy(this.dSWIN.Kardex, ((int)(System.Convert.ChangeType(bodegaComboBox.SelectedValue, typeof(int)))), ((int)(System.Convert.ChangeType(productoTextBox.Text, typeof(int)))));
             dgvDatos.AutoResizeColumns();
         }
 
