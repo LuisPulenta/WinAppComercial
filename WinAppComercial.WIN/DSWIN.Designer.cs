@@ -12401,7 +12401,7 @@ SELECT IDKardex, IDBodega, IDProducto, Fecha, Documento, Entrada, Salida, Saldo,
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT IDKardex, IDBodega, IDProducto, Fecha, Documento, Entrada, Salida, Saldo, " +
                 "UltimoCosto, CostoPromedio FROM dbo.Kardex\r\nWHERE IDBodega = @IDBodega AND IDPro" +
-                "ducto = @IDProducto";
+                "ducto = @IDProducto\r\nORDER BY Fecha DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDBodega", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDBodega", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDProducto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

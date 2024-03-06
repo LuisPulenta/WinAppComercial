@@ -91,6 +91,7 @@ namespace WinAppComercial.CAD
                     float saldo = 0;
                     decimal costoPromedio = 0;
                     decimal ultimoCosto = 0;
+
                     if (misKardex[0].Entrada > 0)
                     {
                         saldo = (float)misKardex[0].Entrada;
@@ -99,7 +100,7 @@ namespace WinAppComercial.CAD
                     }
                     else
                     {
-                        saldo = (float)misKardex[0].Salida;
+                        saldo = -(float)misKardex[0].Salida;
                         ultimoCosto = 0;
                     }
 

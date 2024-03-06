@@ -197,5 +197,21 @@ namespace WinAppComercial.WIN
         {
             ventasToolStripMenuItem_Click(sender, e);
         }
+
+        private void verificarConsistenciaDeKardexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult rta = MessageBox.Show(
+           "¿Está seguro de querer verificar la consistencia del Kardex?",
+           "Confirmación",
+           MessageBoxButtons.YesNo,
+           MessageBoxIcon.Question,
+           MessageBoxDefaultButton.Button2);
+
+            if (rta == DialogResult.No) return;
+
+            CADKardex.ReKardex();
+
+            MessageBox.Show("Verificación de Kardex finalizada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
