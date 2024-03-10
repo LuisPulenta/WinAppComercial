@@ -34,8 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,111 +54,132 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DSWIN.cs">
+      <DependentUpon>DSWIN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSWIN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSWIN.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frmBarras.cs">
+    <Compile Include="Listados\cryListadoProductos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cryListadoProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Listados\frmListadoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBarras.Designer.cs">
+    <Compile Include="Listados\frmListadoProductos.Designer.cs">
+      <DependentUpon>frmListadoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmBarras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmBarras.Designer.cs">
       <DependentUpon>frmBarras.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBodegas.cs">
+    <Compile Include="Maestros\frmBodegas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBodegas.Designer.cs">
+    <Compile Include="Maestros\frmBodegas.Designer.cs">
       <DependentUpon>frmBodegas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBusquedaCliente.cs">
+    <Compile Include="Busquedas\frmBusquedaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBusquedaCliente.Designer.cs">
+    <Compile Include="Busquedas\frmBusquedaCliente.Designer.cs">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBusquedaProducto.cs">
+    <Compile Include="Busquedas\frmBusquedaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBusquedaProducto.Designer.cs">
+    <Compile Include="Busquedas\frmBusquedaProducto.Designer.cs">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBusquedaProveedor.cs">
+    <Compile Include="Busquedas\frmBusquedaProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBusquedaProveedor.Designer.cs">
+    <Compile Include="Busquedas\frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCambioClave.cs">
+    <Compile Include="Seguridad\frmCambioClave.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCambioClave.Designer.cs">
+    <Compile Include="Seguridad\frmCambioClave.Designer.cs">
       <DependentUpon>frmCambioClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCambioUsuario.cs">
+    <Compile Include="Seguridad\frmCambioUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCambioUsuario.Designer.cs">
+    <Compile Include="Seguridad\frmCambioUsuario.Designer.cs">
       <DependentUpon>frmCambioUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientes.cs">
+    <Compile Include="Maestros\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientes.Designer.cs">
+    <Compile Include="Maestros\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClientesTemp.cs">
+    <Compile Include="Maestros\frmClientesTemp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClientesTemp.Designer.cs">
+    <Compile Include="Maestros\frmClientesTemp.Designer.cs">
       <DependentUpon>frmClientesTemp.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCompras.cs">
+    <Compile Include="Movimientos\frmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCompras.Designer.cs">
+    <Compile Include="Movimientos\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConceptos.cs">
+    <Compile Include="Maestros\frmConceptos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConceptos.Designer.cs">
+    <Compile Include="Maestros\frmConceptos.Designer.cs">
       <DependentUpon>frmConceptos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaKardex.cs">
+    <Compile Include="Maestros\frmConsultaKardex.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaKardex.Designer.cs">
+    <Compile Include="Maestros\frmConsultaKardex.Designer.cs">
       <DependentUpon>frmConsultaKardex.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDepartamentos.cs">
+    <Compile Include="Maestros\frmDepartamentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDepartamentos.Designer.cs">
+    <Compile Include="Maestros\frmDepartamentos.Designer.cs">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmIvas.cs">
+    <Compile Include="Movimientos\frmDevolucionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmIvas.Designer.cs">
+    <Compile Include="Movimientos\frmDevolucionClientes.Designer.cs">
+      <DependentUpon>frmDevolucionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmIvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmIvas.Designer.cs">
       <DependentUpon>frmIvas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Seguridad\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Seguridad\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMedidas.cs">
+    <Compile Include="Maestros\frmMedidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMedidas.Designer.cs">
+    <Compile Include="Maestros\frmMedidas.Designer.cs">
       <DependentUpon>frmMedidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmParametrosBodega.cs">
+    <Compile Include="Maestros\frmParametrosBodega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmParametrosBodega.Designer.cs">
+    <Compile Include="Maestros\frmParametrosBodega.Designer.cs">
       <DependentUpon>frmParametrosBodega.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
@@ -160,28 +188,28 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProductos.cs">
+    <Compile Include="Maestros\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProductos.Designer.cs">
+    <Compile Include="Maestros\frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProveedores.cs">
+    <Compile Include="Maestros\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProveedores.Designer.cs">
+    <Compile Include="Maestros\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTiposDocumento.cs">
+    <Compile Include="Maestros\frmTiposDocumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTiposDocumento.Designer.cs">
+    <Compile Include="Maestros\frmTiposDocumento.Designer.cs">
       <DependentUpon>frmTiposDocumento.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuarios.cs">
+    <Compile Include="Maestros\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuarios.Designer.cs">
+    <Compile Include="Maestros\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVentas.cs">
@@ -190,73 +218,83 @@
     <Compile Include="frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Clases\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegexUtilities.cs" />
-    <EmbeddedResource Include="frmBarras.resx">
+    <Compile Include="Clases\RegexUtilities.cs" />
+    <EmbeddedResource Include="Listados\cryListadoProductos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cryListadoProductos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmListadoProductos.resx">
+      <DependentUpon>frmListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmBarras.resx">
       <DependentUpon>frmBarras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBodegas.resx">
+    <EmbeddedResource Include="Maestros\frmBodegas.resx">
       <DependentUpon>frmBodegas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBusquedaCliente.resx">
+    <EmbeddedResource Include="Busquedas\frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBusquedaProducto.resx">
+    <EmbeddedResource Include="Busquedas\frmBusquedaProducto.resx">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBusquedaProveedor.resx">
+    <EmbeddedResource Include="Busquedas\frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCambioClave.resx">
+    <EmbeddedResource Include="Seguridad\frmCambioClave.resx">
       <DependentUpon>frmCambioClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCambioUsuario.resx">
+    <EmbeddedResource Include="Seguridad\frmCambioUsuario.resx">
       <DependentUpon>frmCambioUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientes.resx">
+    <EmbeddedResource Include="Maestros\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClientesTemp.resx">
+    <EmbeddedResource Include="Maestros\frmClientesTemp.resx">
       <DependentUpon>frmClientesTemp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCompras.resx">
+    <EmbeddedResource Include="Movimientos\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConceptos.resx">
+    <EmbeddedResource Include="Maestros\frmConceptos.resx">
       <DependentUpon>frmConceptos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaKardex.resx">
+    <EmbeddedResource Include="Maestros\frmConsultaKardex.resx">
       <DependentUpon>frmConsultaKardex.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDepartamentos.resx">
+    <EmbeddedResource Include="Maestros\frmDepartamentos.resx">
       <DependentUpon>frmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmIvas.resx">
+    <EmbeddedResource Include="Movimientos\frmDevolucionClientes.resx">
+      <DependentUpon>frmDevolucionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmIvas.resx">
       <DependentUpon>frmIvas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Seguridad\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMedidas.resx">
+    <EmbeddedResource Include="Maestros\frmMedidas.resx">
       <DependentUpon>frmMedidas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmParametrosBodega.resx">
+    <EmbeddedResource Include="Maestros\frmParametrosBodega.resx">
       <DependentUpon>frmParametrosBodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProductos.resx">
+    <EmbeddedResource Include="Maestros\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProveedores.resx">
+    <EmbeddedResource Include="Maestros\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTiposDocumento.resx">
+    <EmbeddedResource Include="Maestros\frmTiposDocumento.resx">
       <DependentUpon>frmTiposDocumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuarios.resx">
+    <EmbeddedResource Include="Maestros\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentas.resx">
@@ -301,6 +339,12 @@
       <Project>{8f6232d0-800b-4cef-a827-43961e4e900f}</Project>
       <Name>WinAppComercial.CAD</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

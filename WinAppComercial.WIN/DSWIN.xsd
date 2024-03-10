@@ -406,7 +406,17 @@ SELECT IDDepartamento, Descripcion FROM Departamento WHERE (IDDepartamento = @ID
               <Mapping SourceColumn="IDDepartamento" DataSetColumn="IDDepartamento" />
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="LuisAplicacionComercialConnectionString (Settings)" DbObjectName="LuisAplicacionComercial.dbo.Departamento" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT IDDepartamento, Descripcion FROM dbo.Departamento 
+ORDER BY Descripcion </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IVATableAdapter" GeneratorDataComponentClassName="IVATableAdapter" Name="IVA" UserDataComponentName="IVATableAdapter">
             <MainSource>
@@ -954,6 +964,71 @@ ORDER BY Fecha DESC</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VentaTableAdapter" GeneratorDataComponentClassName="VentaTableAdapter" Name="Venta" UserDataComponentName="VentaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LuisAplicacionComercialConnectionString (Settings)" DbObjectName="LuisAplicacionComercial.dbo.Venta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Venta.IDVenta, 'Venta: ' +Convert(NVARCHAR,Venta.IDVenta)+' '+Convert(NVARCHAR,Venta.Fecha)+' Cliente: '+ Convert(NVARCHAR,Cliente.IDCliente) + '-'+Cliente.NombreComercial+' Monto: '+ Convert(NVARCHAR,SUM( VentaDetalle.Cantidad * VentaDetalle.Precio - ( VentaDetalle.Precio * VentaDetalle.Cantidad) / (1 + VentaDetalle.PorcentajeIVA) 
+         * VentaDetalle.PorcentajeDescuento)) +' Items: '+ Convert(NVARCHAR,COUNT( VentaDetalle.IDVenta)) AS Venta
+FROM   Venta INNER JOIN
+          Cliente ON Venta.IDCliente = Cliente.IDCliente INNER JOIN
+          VentaDetalle ON Venta.IDVenta = VentaDetalle.IDVenta
+GROUP BY Venta.IDVenta, Venta.Fecha, Cliente.IDCliente,Cliente.NombreComercial
+ORDER BY Venta.Fecha DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDVenta" DataSetColumn="IDVenta" />
+              <Mapping SourceColumn="Venta" DataSetColumn="Venta" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListadoProductosTableAdapter" GeneratorDataComponentClassName="ListadoProductosTableAdapter" Name="ListadoProductos" UserDataComponentName="ListadoProductosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LuisAplicacionComercialConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Departamento.Descripcion AS Departamento, Producto.IDProducto, Producto.Descripcion AS Descripción, IVA.Descripcion AS IVA, Producto.Precio, Producto.IDMedida AS Unidad, Producto.Medida
+FROM   Departamento INNER JOIN
+          Producto ON Departamento.IDDepartamento = Producto.IDDepartamento INNER JOIN
+          IVA ON Producto.IDIVA = IVA.IDIVA
+ORDER BY Departamento.Descripcion,Producto.Descripcion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="IDProducto" DataSetColumn="IDProducto" />
+              <Mapping SourceColumn="Descripción" DataSetColumn="Descripción" />
+              <Mapping SourceColumn="IVA" DataSetColumn="IVA" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Unidad" DataSetColumn="Unidad" />
+              <Mapping SourceColumn="Medida" DataSetColumn="Medida" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="LuisAplicacionComercialConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Departamento.Descripcion AS Departamento, Producto.IDProducto, Producto.Descripcion AS Descripción, IVA.Descripcion AS IVA, Producto.Precio, Producto.IDMedida AS Unidad, Producto.Medida
+FROM   Departamento INNER JOIN
+          Producto ON Departamento.IDDepartamento = Producto.IDDepartamento INNER JOIN
+          IVA ON Producto.IDIVA = IVA.IDIVA
+WHERE Producto.IDDepartamento =@IDDepartamento
+ORDER BY Departamento.Descripcion,Producto.Descripcion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IDDepartamento" ColumnName="IDDepartamento" DataSourceName="LuisAplicacionComercial.dbo.Producto" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IDDepartamento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IDDepartamento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1336,6 +1411,57 @@ ORDER BY Fecha DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Venta" msprop:Generator_TableClassName="VentaDataTable" msprop:Generator_TableVarName="tableVenta" msprop:Generator_RowChangedName="VentaRowChanged" msprop:Generator_TablePropName="Venta" msprop:Generator_RowDeletingName="VentaRowDeleting" msprop:Generator_RowChangingName="VentaRowChanging" msprop:Generator_RowEvHandlerName="VentaRowChangeEventHandler" msprop:Generator_RowDeletedName="VentaRowDeleted" msprop:Generator_RowClassName="VentaRow" msprop:Generator_UserTableName="Venta" msprop:Generator_RowEvArgName="VentaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDVenta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDVenta" msprop:Generator_ColumnPropNameInRow="IDVenta" msprop:Generator_ColumnPropNameInTable="IDVentaColumn" msprop:Generator_UserColumnName="IDVenta" type="xs:int" />
+              <xs:element name="Venta" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVenta" msprop:Generator_ColumnPropNameInRow="Venta" msprop:Generator_ColumnPropNameInTable="VentaColumn" msprop:Generator_UserColumnName="Venta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListadoProductos" msprop:Generator_TableClassName="ListadoProductosDataTable" msprop:Generator_TableVarName="tableListadoProductos" msprop:Generator_TablePropName="ListadoProductos" msprop:Generator_RowDeletingName="ListadoProductosRowDeleting" msprop:Generator_RowChangingName="ListadoProductosRowChanging" msprop:Generator_RowEvHandlerName="ListadoProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoProductosRowDeleted" msprop:Generator_UserTableName="ListadoProductos" msprop:Generator_RowChangedName="ListadoProductosRowChanged" msprop:Generator_RowEvArgName="ListadoProductosRowChangeEvent" msprop:Generator_RowClassName="ListadoProductosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" msprop:Generator_UserColumnName="Departamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDProducto" msprop:Generator_ColumnPropNameInRow="IDProducto" msprop:Generator_ColumnPropNameInTable="IDProductoColumn" msprop:Generator_UserColumnName="IDProducto" type="xs:int" />
+              <xs:element name="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_UserColumnName="Descripción">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IVA" msprop:Generator_ColumnVarNameInTable="columnIVA" msprop:Generator_ColumnPropNameInRow="IVA" msprop:Generator_ColumnPropNameInTable="IVAColumn" msprop:Generator_UserColumnName="IVA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
+              <xs:element name="Unidad" msprop:Generator_ColumnVarNameInTable="columnUnidad" msprop:Generator_ColumnPropNameInRow="Unidad" msprop:Generator_ColumnPropNameInTable="UnidadColumn" msprop:Generator_UserColumnName="Unidad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Medida" msprop:Generator_ColumnVarNameInTable="columnMedida" msprop:Generator_ColumnPropNameInRow="Medida" msprop:Generator_ColumnPropNameInTable="MedidaColumn" msprop:Generator_UserColumnName="Medida" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1395,6 +1521,14 @@ ORDER BY Fecha DESC</CommandText>
     <xs:unique name="Kardex_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Kardex" />
       <xs:field xpath="mstns:IDKardex" />
+    </xs:unique>
+    <xs:unique name="Venta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Venta" />
+      <xs:field xpath="mstns:IDVenta" />
+    </xs:unique>
+    <xs:unique name="ListadoProductos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ListadoProductos" />
+      <xs:field xpath="mstns:IDProducto" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

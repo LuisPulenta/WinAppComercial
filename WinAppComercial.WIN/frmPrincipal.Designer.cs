@@ -56,6 +56,8 @@ namespace WinAppComercial.WIN
             this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trasladosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.verificarConsistenciaDeKardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,10 +76,11 @@ namespace WinAppComercial.WIN
             this.tsbCompras = new System.Windows.Forms.ToolStripButton();
             this.tsbVentas = new System.Windows.Forms.ToolStripButton();
             this.tsbKardex = new System.Windows.Forms.ToolStripButton();
+            this.tsbDevolucionCliente = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.nombresUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.verificarConsistenciaDeKardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -94,7 +97,7 @@ namespace WinAppComercial.WIN
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1119, 40);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,8 +117,9 @@ namespace WinAppComercial.WIN
             this.toolStripMenuItem2,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("archivoToolStripMenuItem.Image")));
+            this.archivoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(105, 36);
             this.archivoToolStripMenuItem.Text = "&Archivo";
             // 
             // bodegasToolStripMenuItem
@@ -255,8 +259,9 @@ namespace WinAppComercial.WIN
             this.toolStripMenuItem3,
             this.verificarConsistenciaDeKardexToolStripMenuItem});
             this.movimientosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem.Image")));
+            this.movimientosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(141, 36);
             this.movimientosToolStripMenuItem.Text = "&Movimientos";
             // 
             // comprasToolStripMenuItem
@@ -283,6 +288,7 @@ namespace WinAppComercial.WIN
             this.deClientesToolStripMenuItem.Name = "deClientesToolStripMenuItem";
             this.deClientesToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.deClientesToolStripMenuItem.Text = "De &Clientes";
+            this.deClientesToolStripMenuItem.Click += new System.EventHandler(this.deClientesToolStripMenuItem_Click);
             // 
             // aProveedoresToolStripMenuItem
             // 
@@ -313,21 +319,35 @@ namespace WinAppComercial.WIN
             this.ventasToolStripMenuItem.Text = "&Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(300, 6);
+            // 
+            // verificarConsistenciaDeKardexToolStripMenuItem
+            // 
+            this.verificarConsistenciaDeKardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("verificarConsistenciaDeKardexToolStripMenuItem.Image")));
+            this.verificarConsistenciaDeKardexToolStripMenuItem.Name = "verificarConsistenciaDeKardexToolStripMenuItem";
+            this.verificarConsistenciaDeKardexToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
+            this.verificarConsistenciaDeKardexToolStripMenuItem.Text = "V&erificar Consistencia de Kardex";
+            this.verificarConsistenciaDeKardexToolStripMenuItem.Click += new System.EventHandler(this.verificarConsistenciaDeKardexToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kardexToolStripMenuItem,
             this.stockToolStripMenuItem});
             this.consultasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasToolStripMenuItem.Image")));
+            this.consultasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(118, 36);
             this.consultasToolStripMenuItem.Text = "&Consultas";
             // 
             // kardexToolStripMenuItem
             // 
             this.kardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kardexToolStripMenuItem.Image")));
             this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
-            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.kardexToolStripMenuItem.Text = "&Kardex";
             this.kardexToolStripMenuItem.Click += new System.EventHandler(this.kardexToolStripMenuItem_Click);
             // 
@@ -335,31 +355,33 @@ namespace WinAppComercial.WIN
             // 
             this.stockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockToolStripMenuItem.Image")));
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.stockToolStripMenuItem.Text = "&Stock";
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inventarioToolStripMenuItem,
-            this.ventasToolStripMenuItem1});
+            this.ventasToolStripMenuItem1,
+            this.listadosToolStripMenuItem});
             this.reportesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportesToolStripMenuItem.Image")));
+            this.reportesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(114, 36);
             this.reportesToolStripMenuItem.Text = "&Reportes";
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inventarioToolStripMenuItem.Image")));
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.inventarioToolStripMenuItem.Text = "&Inventario";
             // 
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ventasToolStripMenuItem1.Image")));
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(158, 26);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.ventasToolStripMenuItem1.Text = "&Ventas";
             // 
             // ayudaToolStripMenuItem
@@ -368,8 +390,9 @@ namespace WinAppComercial.WIN
             this.acercaDeToolStripMenuItem,
             this.ayudaToolStripMenuItem1});
             this.ayudaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ayudaToolStripMenuItem.Image")));
+            this.ayudaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(97, 36);
             this.ayudaToolStripMenuItem.Text = "A&yuda";
             // 
             // acercaDeToolStripMenuItem
@@ -397,37 +420,41 @@ namespace WinAppComercial.WIN
             this.toolStripSeparator2,
             this.tsbCompras,
             this.tsbVentas,
-            this.tsbKardex});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.tsbKardex,
+            this.tsbDevolucionCliente});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 40);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1119, 39);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(85, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(97, 36);
             this.toolStripButton1.Text = "Clientes";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // tsbProveedores
             // 
             this.tsbProveedores.Image = ((System.Drawing.Image)(resources.GetObject("tsbProveedores.Image")));
+            this.tsbProveedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbProveedores.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProveedores.Name = "tsbProveedores";
-            this.tsbProveedores.Size = new System.Drawing.Size(115, 24);
+            this.tsbProveedores.Size = new System.Drawing.Size(127, 36);
             this.tsbProveedores.Text = "Proveedores";
             this.tsbProveedores.Click += new System.EventHandler(this.tsbProveedores_Click);
             // 
             // tsbProductos
             // 
             this.tsbProductos.Image = ((System.Drawing.Image)(resources.GetObject("tsbProductos.Image")));
+            this.tsbProductos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbProductos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProductos.Name = "tsbProductos";
-            this.tsbProductos.Size = new System.Drawing.Size(99, 24);
+            this.tsbProductos.Size = new System.Drawing.Size(111, 36);
             this.tsbProductos.Text = "Productos";
             this.tsbProductos.ToolTipText = "Productos";
             this.tsbProductos.Click += new System.EventHandler(this.tsbProductos_Click);
@@ -435,39 +462,52 @@ namespace WinAppComercial.WIN
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // tsbCompras
             // 
             this.tsbCompras.Image = ((System.Drawing.Image)(resources.GetObject("tsbCompras.Image")));
+            this.tsbCompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbCompras.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCompras.Name = "tsbCompras";
-            this.tsbCompras.Size = new System.Drawing.Size(92, 24);
+            this.tsbCompras.Size = new System.Drawing.Size(104, 36);
             this.tsbCompras.Text = "Compras";
             this.tsbCompras.Click += new System.EventHandler(this.tsbCompras_Click);
             // 
             // tsbVentas
             // 
             this.tsbVentas.Image = ((System.Drawing.Image)(resources.GetObject("tsbVentas.Image")));
+            this.tsbVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbVentas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbVentas.Name = "tsbVentas";
-            this.tsbVentas.Size = new System.Drawing.Size(76, 24);
+            this.tsbVentas.Size = new System.Drawing.Size(88, 36);
             this.tsbVentas.Text = "Ventas";
             this.tsbVentas.Click += new System.EventHandler(this.tsbVentas_Click);
             // 
             // tsbKardex
             // 
             this.tsbKardex.Image = ((System.Drawing.Image)(resources.GetObject("tsbKardex.Image")));
+            this.tsbKardex.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbKardex.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbKardex.Name = "tsbKardex";
-            this.tsbKardex.Size = new System.Drawing.Size(79, 24);
+            this.tsbKardex.Size = new System.Drawing.Size(91, 36);
             this.tsbKardex.Text = "Kardex";
             this.tsbKardex.Click += new System.EventHandler(this.tsbKardex_Click);
+            // 
+            // tsbDevolucionCliente
+            // 
+            this.tsbDevolucionCliente.Image = ((System.Drawing.Image)(resources.GetObject("tsbDevolucionCliente.Image")));
+            this.tsbDevolucionCliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbDevolucionCliente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDevolucionCliente.Name = "tsbDevolucionCliente";
+            this.tsbDevolucionCliente.Size = new System.Drawing.Size(197, 36);
+            this.tsbDevolucionCliente.Text = "Devolución de Clientes";
+            this.tsbDevolucionCliente.Click += new System.EventHandler(this.tsbDevolucionCliente_Click);
             // 
             // statusStrip1
             // 
@@ -476,7 +516,7 @@ namespace WinAppComercial.WIN
             this.nombresUsuarioToolStripStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1119, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -485,24 +525,28 @@ namespace WinAppComercial.WIN
             this.nombresUsuarioToolStripStatusLabel.Name = "nombresUsuarioToolStripStatusLabel";
             this.nombresUsuarioToolStripStatusLabel.Size = new System.Drawing.Size(0, 16);
             // 
-            // toolStripMenuItem3
+            // listadosToolStripMenuItem
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(300, 6);
+            this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosToolStripMenuItem2});
+            this.listadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("listadosToolStripMenuItem.Image")));
+            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.listadosToolStripMenuItem.Text = "&Listados";
             // 
-            // verificarConsistenciaDeKardexToolStripMenuItem
+            // productosToolStripMenuItem2
             // 
-            this.verificarConsistenciaDeKardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("verificarConsistenciaDeKardexToolStripMenuItem.Image")));
-            this.verificarConsistenciaDeKardexToolStripMenuItem.Name = "verificarConsistenciaDeKardexToolStripMenuItem";
-            this.verificarConsistenciaDeKardexToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
-            this.verificarConsistenciaDeKardexToolStripMenuItem.Text = "V&erificar Consistencia de Kardex";
-            this.verificarConsistenciaDeKardexToolStripMenuItem.Click += new System.EventHandler(this.verificarConsistenciaDeKardexToolStripMenuItem_Click);
+            this.productosToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem2.Image")));
+            this.productosToolStripMenuItem2.Name = "productosToolStripMenuItem2";
+            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.productosToolStripMenuItem2.Text = "&Productos";
+            this.productosToolStripMenuItem2.Click += new System.EventHandler(this.productosToolStripMenuItem2_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1119, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -575,5 +619,8 @@ namespace WinAppComercial.WIN
         private System.Windows.Forms.ToolStripButton tsbVentas;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem verificarConsistenciaDeKardexToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton tsbDevolucionCliente;
+        private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem2;
     }
 }

@@ -2,6 +2,7 @@
 
 using System.Windows.Forms;
 using WinAppComercial.CAD;
+using WinAppComercial.WIN.Listados;
 
 namespace WinAppComercial.WIN
 {
@@ -212,6 +213,26 @@ namespace WinAppComercial.WIN
             CADKardex.ReKardex();
 
             MessageBox.Show("Verificación de Kardex finalizada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void deClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevolucionClientes miForm = new frmDevolucionClientes();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbDevolucionCliente_Click(object sender, EventArgs e)
+        {
+            deClientesToolStripMenuItem_Click(sender, e);
+        }
+
+        private void productosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmListadoProductos miForm = new frmListadoProductos();
+            miForm.MdiParent = this;
+            miForm.Show();
         }
     }
 }
