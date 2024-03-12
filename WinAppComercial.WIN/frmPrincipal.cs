@@ -3,6 +3,7 @@
 using System.Windows.Forms;
 using WinAppComercial.CAD;
 using WinAppComercial.WIN.Listados;
+using WinAppComercial.WIN.Movimientos;
 
 namespace WinAppComercial.WIN
 {
@@ -233,6 +234,45 @@ namespace WinAppComercial.WIN
             frmListadoProductos miForm = new frmListadoProductos();
             miForm.MdiParent = this;
             miForm.Show();
+        }
+
+        private void aProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevolucionProveedores miForm = new frmDevolucionProveedores();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbDevolucionProveedor_Click(object sender, EventArgs e)
+        {
+            aProveedoresToolStripMenuItem_Click(sender, e);
+        }
+
+        private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSalidas miForm = new frmSalidas();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void trasladosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTraslados miForm = new frmTraslados();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbSalidas_Click(object sender, EventArgs e)
+        {
+            salidasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void tsbTraslados_Click(object sender, EventArgs e)
+        {
+            trasladosToolStripMenuItem_Click(sender, e);
         }
     }
 }

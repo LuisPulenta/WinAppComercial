@@ -64,6 +64,8 @@ namespace WinAppComercial.WIN
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,10 +79,11 @@ namespace WinAppComercial.WIN
             this.tsbVentas = new System.Windows.Forms.ToolStripButton();
             this.tsbKardex = new System.Windows.Forms.ToolStripButton();
             this.tsbDevolucionCliente = new System.Windows.Forms.ToolStripButton();
+            this.tsbDevolucionProveedor = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.nombresUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
+            this.tsbTraslados = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -97,7 +100,7 @@ namespace WinAppComercial.WIN
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1119, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1288, 40);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -296,6 +299,7 @@ namespace WinAppComercial.WIN
             this.aProveedoresToolStripMenuItem.Name = "aProveedoresToolStripMenuItem";
             this.aProveedoresToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.aProveedoresToolStripMenuItem.Text = "A &Proveedores";
+            this.aProveedoresToolStripMenuItem.Click += new System.EventHandler(this.aProveedoresToolStripMenuItem_Click);
             // 
             // salidasToolStripMenuItem
             // 
@@ -303,6 +307,7 @@ namespace WinAppComercial.WIN
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
             this.salidasToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
             this.salidasToolStripMenuItem.Text = "&Salidas";
+            this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
             // 
             // trasladosToolStripMenuItem
             // 
@@ -310,6 +315,7 @@ namespace WinAppComercial.WIN
             this.trasladosToolStripMenuItem.Name = "trasladosToolStripMenuItem";
             this.trasladosToolStripMenuItem.Size = new System.Drawing.Size(303, 26);
             this.trasladosToolStripMenuItem.Text = "&Traslados";
+            this.trasladosToolStripMenuItem.Click += new System.EventHandler(this.trasladosToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -374,15 +380,32 @@ namespace WinAppComercial.WIN
             // 
             this.inventarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inventarioToolStripMenuItem.Image")));
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.inventarioToolStripMenuItem.Text = "&Inventario";
             // 
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ventasToolStripMenuItem1.Image")));
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(158, 26);
             this.ventasToolStripMenuItem1.Text = "&Ventas";
+            // 
+            // listadosToolStripMenuItem
+            // 
+            this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosToolStripMenuItem2});
+            this.listadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("listadosToolStripMenuItem.Image")));
+            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.listadosToolStripMenuItem.Text = "&Listados";
+            // 
+            // productosToolStripMenuItem2
+            // 
+            this.productosToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem2.Image")));
+            this.productosToolStripMenuItem2.Name = "productosToolStripMenuItem2";
+            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(158, 26);
+            this.productosToolStripMenuItem2.Text = "&Productos";
+            this.productosToolStripMenuItem2.Click += new System.EventHandler(this.productosToolStripMenuItem2_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -421,10 +444,13 @@ namespace WinAppComercial.WIN
             this.tsbCompras,
             this.tsbVentas,
             this.tsbKardex,
-            this.tsbDevolucionCliente});
+            this.tsbDevolucionCliente,
+            this.tsbDevolucionProveedor,
+            this.tsbSalidas,
+            this.tsbTraslados});
             this.toolStrip1.Location = new System.Drawing.Point(0, 40);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1119, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1288, 39);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -509,6 +535,16 @@ namespace WinAppComercial.WIN
             this.tsbDevolucionCliente.Text = "Devolución de Clientes";
             this.tsbDevolucionCliente.Click += new System.EventHandler(this.tsbDevolucionCliente_Click);
             // 
+            // tsbDevolucionProveedor
+            // 
+            this.tsbDevolucionProveedor.Image = ((System.Drawing.Image)(resources.GetObject("tsbDevolucionProveedor.Image")));
+            this.tsbDevolucionProveedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbDevolucionProveedor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDevolucionProveedor.Name = "tsbDevolucionProveedor";
+            this.tsbDevolucionProveedor.Size = new System.Drawing.Size(204, 36);
+            this.tsbDevolucionProveedor.Text = "Devolución a Proveedor";
+            this.tsbDevolucionProveedor.Click += new System.EventHandler(this.tsbDevolucionProveedor_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -516,7 +552,7 @@ namespace WinAppComercial.WIN
             this.nombresUsuarioToolStripStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1119, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1288, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -525,28 +561,31 @@ namespace WinAppComercial.WIN
             this.nombresUsuarioToolStripStatusLabel.Name = "nombresUsuarioToolStripStatusLabel";
             this.nombresUsuarioToolStripStatusLabel.Size = new System.Drawing.Size(0, 16);
             // 
-            // listadosToolStripMenuItem
+            // tsbSalidas
             // 
-            this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosToolStripMenuItem2});
-            this.listadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("listadosToolStripMenuItem.Image")));
-            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
-            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.listadosToolStripMenuItem.Text = "&Listados";
+            this.tsbSalidas.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalidas.Image")));
+            this.tsbSalidas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbSalidas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSalidas.Name = "tsbSalidas";
+            this.tsbSalidas.Size = new System.Drawing.Size(92, 36);
+            this.tsbSalidas.Text = "Salidas";
+            this.tsbSalidas.Click += new System.EventHandler(this.tsbSalidas_Click);
             // 
-            // productosToolStripMenuItem2
+            // tsbTraslados
             // 
-            this.productosToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem2.Image")));
-            this.productosToolStripMenuItem2.Name = "productosToolStripMenuItem2";
-            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.productosToolStripMenuItem2.Text = "&Productos";
-            this.productosToolStripMenuItem2.Click += new System.EventHandler(this.productosToolStripMenuItem2_Click);
+            this.tsbTraslados.Image = ((System.Drawing.Image)(resources.GetObject("tsbTraslados.Image")));
+            this.tsbTraslados.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbTraslados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbTraslados.Name = "tsbTraslados";
+            this.tsbTraslados.Size = new System.Drawing.Size(107, 36);
+            this.tsbTraslados.Text = "Traslados";
+            this.tsbTraslados.Click += new System.EventHandler(this.tsbTraslados_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 450);
+            this.ClientSize = new System.Drawing.Size(1288, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -622,5 +661,8 @@ namespace WinAppComercial.WIN
         private System.Windows.Forms.ToolStripButton tsbDevolucionCliente;
         private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripButton tsbDevolucionProveedor;
+        private System.Windows.Forms.ToolStripButton tsbSalidas;
+        private System.Windows.Forms.ToolStripButton tsbTraslados;
     }
 }

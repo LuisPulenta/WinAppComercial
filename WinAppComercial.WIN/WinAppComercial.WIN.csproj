@@ -104,6 +104,24 @@
     <Compile Include="Busquedas\frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimientos\frmDevolucionProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmDevolucionProveedores.Designer.cs">
+      <DependentUpon>frmDevolucionProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\frmSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmSalidas.Designer.cs">
+      <DependentUpon>frmSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\frmTraslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmTraslados.Designer.cs">
+      <DependentUpon>frmTraslados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\frmCambioClave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,10 +230,10 @@
     <Compile Include="Maestros\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVentas.cs">
+    <Compile Include="Movimientos\frmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVentas.Designer.cs">
+    <Compile Include="Movimientos\frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Program.cs" />
@@ -242,6 +260,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmDevolucionProveedores.resx">
+      <DependentUpon>frmDevolucionProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmSalidas.resx">
+      <DependentUpon>frmSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmTraslados.resx">
+      <DependentUpon>frmTraslados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmCambioClave.resx">
       <DependentUpon>frmCambioClave.cs</DependentUpon>
@@ -297,7 +324,7 @@
     <EmbeddedResource Include="Maestros\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVentas.resx">
+    <EmbeddedResource Include="Movimientos\frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
