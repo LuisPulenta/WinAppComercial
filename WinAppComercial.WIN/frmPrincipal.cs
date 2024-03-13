@@ -274,5 +274,13 @@ namespace WinAppComercial.WIN
         {
             trasladosToolStripMenuItem_Click(sender, e);
         }
+
+        private void paso1ProgramarInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventarioFisicoPaso1 miForm = new frmInventarioFisicoPaso1();
+            miForm.MdiParent = this;
+            //miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
     }
 }
